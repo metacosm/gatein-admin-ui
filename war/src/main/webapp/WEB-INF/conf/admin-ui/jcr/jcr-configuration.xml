@@ -7,7 +7,7 @@
 		<target-component>org.exoplatform.services.jcr.config.RepositoryServiceConfiguration</target-component>
 		<component-plugin>
 			<!-- The name of the plugin -->
-			<name>Admin UI RepositoryServiceConfiguration Plugin</name>
+			<name>Sample RepositoryServiceConfiguration Plugin</name>
 			<!-- The name of the method to call on the RepositoryServiceConfiguration in order to add the RepositoryServiceConfigurations -->
 			<set-method>addConfig</set-method>
 			<!-- The full qualified name of the RepositoryServiceConfigurationPlugin -->

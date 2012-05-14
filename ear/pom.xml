@@ -3,25 +3,25 @@
 
 	<parent>
 		<groupId>org.gatein.ui</groupId>
-		<artifactId>admin-ui-parent</artifactId>
+		<artifactId>gatein-admin-ui-parent</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>admin-ui</artifactId>
+	<artifactId>gatein-admin-ui</artifactId>
 	<packaging>ear</packaging>
 	<name>GateIn Admin UI Ear</name>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.gatein.ui</groupId>
-			<artifactId>admin-ui-config</artifactId>
+			<artifactId>gatein-admin-ui-config</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.gatein.ui</groupId>
-			<artifactId>admin-ui-war</artifactId>
+			<artifactId>gatein-admin-ui-war</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 			<type>war</type>
 		</dependency>
@@ -37,14 +37,15 @@
 					<modules>
 						<jarModule>
 							<groupId>org.gatein.ui</groupId>
-							<artifactId>admin-ui-config</artifactId>
+							<artifactId>gatein-admin-ui-config</artifactId>
+							<bundleFileName>gatein-admin-ui-config.jar</bundleFileName>
 							<includeInApplicationXml>true</includeInApplicationXml>
 						</jarModule>
 						<webModule>
 							<groupId>org.gatein.ui</groupId>
-							<artifactId>admin-ui-war</artifactId>
-							<bundleFileName>admin-ui.war</bundleFileName>
-							<contextRoot>admin-ui</contextRoot>
+							<artifactId>gatein-admin-ui-war</artifactId>
+							<bundleFileName>gatein-admin-ui.war</bundleFileName>
+							<contextRoot>gatein-admin-ui</contextRoot>
 						</webModule>
 					</modules>
 				</configuration>

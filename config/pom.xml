@@ -3,13 +3,13 @@
 
 	<parent>
 		<groupId>org.gatein.ui</groupId>
-		<artifactId>admin-ui-parent</artifactId>
+		<artifactId>gatein-admin-ui-parent</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>admin-ui-config</artifactId>
+	<artifactId>gatein-admin-ui-config</artifactId>
 	<name>GateIn Admin UI Configuration</name>
 	<packaging>jar</packaging>
 </project>

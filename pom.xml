@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.gatein.ui</groupId>
-  <artifactId>admin-ui-parent</artifactId>
+  <artifactId>gatein-admin-ui-parent</artifactId>
   <name>GateIn Admin UI Parent</name>
   <packaging>pom</packaging>
 
@@ -14,5 +14,10 @@
   	<module>war</module>
   	<module>ear</module>
   </modules>
+  <parent>
+  	<groupId>org.jboss</groupId>
+  	<artifactId>jboss-parent</artifactId>
+  	<version>8</version>
+  </parent>
 </project>
 

@@ -55,7 +55,7 @@
 									<string>web</string>
 								</value>
 								<value>
-									<string>admin-ui</string>
+									<string>gatein-admin-ui</string>
 								</value>
 							</collection>
 						</field>
