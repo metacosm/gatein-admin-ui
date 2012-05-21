@@ -34,12 +34,13 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-ear-plugin</artifactId>
 				<configuration>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
 					<modules>
 						<jarModule>
 							<groupId>org.gatein.ui</groupId>
 							<artifactId>gatein-admin-ui-config</artifactId>
 							<bundleFileName>gatein-admin-ui-config.jar</bundleFileName>
-							<includeInApplicationXml>true</includeInApplicationXml>
+							<includeInApplicationXml>false</includeInApplicationXml>
 						</jarModule>
 						<webModule>
 							<groupId>org.gatein.ui</groupId>

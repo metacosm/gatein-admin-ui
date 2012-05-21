@@ -1,23 +1,46 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-  <modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.jboss</groupId>
+		<artifactId>jboss-parent</artifactId>
+		<version>8</version>
+	</parent>
 
-  <groupId>org.gatein.ui</groupId>
-  <artifactId>gatein-admin-ui-parent</artifactId>
-  <name>GateIn Admin UI Parent</name>
-  <packaging>pom</packaging>
+	<modelVersion>4.0.0</modelVersion>
 
-  <version>1.0.0-SNAPSHOT</version>
+	<groupId>org.gatein.ui</groupId>
+	<artifactId>gatein-admin-ui-parent</artifactId>
+	<name>GateIn Admin UI Parent</name>
+	<packaging>pom</packaging>
 
-  <modules>
-  	<module>config</module>
-  	<module>war</module>
-  	<module>ear</module>
-  </modules>
-  <parent>
-  	<groupId>org.jboss</groupId>
-  	<artifactId>jboss-parent</artifactId>
-  	<version>8</version>
-  </parent>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<properties>
+		<version.portlet_bridge>3.0.0.Beta3</version.portlet_bridge>
+	</properties>
+
+	<modules>
+		<module>config</module>
+		<module>war</module>
+		<module>ear</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.jboss.portletbridge</groupId>
+				<artifactId>portletbridge-api</artifactId>
+				<version>${version.portlet_bridge}</version>
+				<scope>compile</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.portletbridge</groupId>
+				<artifactId>portletbridge-impl</artifactId>
+				<version>${version.portlet_bridge}</version>
+				<scope>runtime</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>
 

@@ -8,49 +8,49 @@
 		<title>Home Page</title>
 		<access-permissions>Everyone</access-permissions>
 		<edit-permission>*:/platform/administrators</edit-permission>
-		<portlet-application>
-			<portlet>
-				<application-ref>web</application-ref>
-				<portlet-ref>HomePagePortlet</portlet-ref>
-				<preferences>
-					<preference>
-						<name>template</name>
-						<value>system:/templates/groovy/webui/component/UIHomePagePortlet.gtmpl</value>
-						<read-only>false</read-only>
-					</preference>
-				</preferences>
-			</portlet>
-			<title>Home Page portlet</title>
+		<container
+			template="system:/groovy/portal/webui/container/UITableColumnContainer.gtmpl">
 			<access-permissions>Everyone</access-permissions>
-			<show-info-bar>false</show-info-bar>
-			<show-application-state>false</show-application-state>
-			<show-application-mode>false</show-application-mode>
-		</portlet-application>
-	</page>
-
-	<page>
-		<name>adminPage</name>
-		<title>Admin Page</title>
-		<access-permissions>Everyone</access-permissions>
-		<edit-permission>*:/platform/administrators</edit-permission>
-		<portlet-application>
-			<portlet>
-				<application-ref>web</application-ref>
-				<portlet-ref>IFramePortlet</portlet-ref>
-				<preferences>
-					<preference>
-						<name>url</name>
-						<value>http://jboss.org/gatein</value>
-						<read-only>false</read-only>
-					</preference>
-				</preferences>
-			</portlet>
-			<title>Admin Page portlet</title>
-			<access-permissions>Everyone</access-permissions>
-			<show-info-bar>false</show-info-bar>
-			<show-application-state>false</show-application-state>
-			<show-application-mode>false</show-application-mode>
-		</portlet-application>
+			<container template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+				<access-permissions>Everyone</access-permissions>
+				<portlet-application>
+					<portlet>
+						<application-ref>gatein-admin-ui</application-ref>
+						<portlet-ref>AdminMenuPortlet</portlet-ref>
+					</portlet>
+					<title>Admin Menu portlet</title>
+					<access-permissions>Everyone</access-permissions>
+					<show-info-bar>false</show-info-bar>
+					<show-application-state>false</show-application-state>
+					<show-application-mode>false</show-application-mode>
+				</portlet-application>
+			</container>
+			<container template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+				<access-permissions>Everyone</access-permissions>
+				<portlet-application>
+					<portlet>
+						<application-ref>gatein-admin-ui</application-ref>
+						<portlet-ref>AdminOption1Portlet</portlet-ref>
+					</portlet>
+					<title>Admin Option1 portlet</title>
+					<access-permissions>Everyone</access-permissions>
+					<show-info-bar>false</show-info-bar>
+					<show-application-state>false</show-application-state>
+					<show-application-mode>false</show-application-mode>
+				</portlet-application>
+				<portlet-application>
+					<portlet>
+						<application-ref>gatein-admin-ui</application-ref>
+						<portlet-ref>AdminOption2Portlet</portlet-ref>
+					</portlet>
+					<title>Admin Option2 portlet</title>
+					<access-permissions>Everyone</access-permissions>
+					<show-info-bar>false</show-info-bar>
+					<show-application-state>false</show-application-state>
+					<show-application-mode>false</show-application-mode>
+				</portlet-application>
+			</container>
+		</container>
 	</page>
 
 </page-set>

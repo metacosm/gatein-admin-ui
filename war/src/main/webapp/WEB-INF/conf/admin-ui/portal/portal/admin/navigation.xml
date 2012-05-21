@@ -6,10 +6,10 @@
 
 	<page-nodes>
 		<node>
-			<uri>adminPage</uri>
-			<name>adminPage</name>
-			<label>#{portal.admin.adminPage}</label>
-			<page-reference>portal::admin::adminPage</page-reference>
+			<uri>homepage</uri>
+			<name>homepage</name>
+			<label>#{portal.admin.homepage}</label>
+			<page-reference>portal::admin::homepage</page-reference>
 		</node>
 
 		<!-- NOT FOUND node -->

@@ -16,15 +16,8 @@
 	<portal-layout>
 		<portlet-application>
 			<portlet>
-				<application-ref>web</application-ref>
-				<portlet-ref>BannerPortlet</portlet-ref>
-				<preferences>
-					<preference>
-						<name>template</name>
-						<value>par:/groovy/groovy/webui/component/UIBannerPortlet.gtmpl</value>
-						<read-only>false</read-only>
-					</preference>
-				</preferences>
+				<application-ref>gatein-admin-ui</application-ref>
+				<portlet-ref>AdminBannerPortlet</portlet-ref>
 			</portlet>
 			<access-permissions>Everyone</access-permissions>
 			<show-info-bar>false</show-info-bar>
@@ -34,15 +27,8 @@
 
 		<portlet-application>
 			<portlet>
-				<application-ref>web</application-ref>
-				<portlet-ref>FooterPortlet</portlet-ref>
-				<preferences>
-					<preference>
-						<name>template</name>
-						<value>par:/groovy/groovy/webui/component/UIFooterPortlet.gtmpl</value>
-						<read-only>false</read-only>
-					</preference>
-				</preferences>
+				<application-ref>gatein-admin-ui</application-ref>
+				<portlet-ref>AdminFooterPortlet</portlet-ref>
 			</portlet>
 			<access-permissions>Everyone</access-permissions>
 			<show-info-bar>false</show-info-bar>

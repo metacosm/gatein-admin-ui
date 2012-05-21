@@ -1,0 +1,8 @@
+<jboss-deployment-structure>
+	<deployment>
+		<dependencies>
+			<module name="org.gatein.lib"/>
+			<module name="com.sun.jsf-impl"/>
+		</dependencies>
+	</deployment>
+</jboss-deployment-structure>
