@@ -8,49 +8,52 @@
 		<title>Home Page</title>
 		<access-permissions>Everyone</access-permissions>
 		<edit-permission>*:/platform/administrators</edit-permission>
-		<container
-			template="system:/groovy/portal/webui/container/UITableColumnContainer.gtmpl">
+		<portlet-application>
+			<portlet>
+				<application-ref>gatein-admin-ui</application-ref>
+				<portlet-ref>AdminWelcomePortlet</portlet-ref>
+			</portlet>
+			<title>Admin Welcome portlet</title>
 			<access-permissions>Everyone</access-permissions>
-			<container template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-				<access-permissions>Everyone</access-permissions>
-				<portlet-application>
-					<portlet>
-						<application-ref>gatein-admin-ui</application-ref>
-						<portlet-ref>AdminMenuPortlet</portlet-ref>
-					</portlet>
-					<title>Admin Menu portlet</title>
-					<access-permissions>Everyone</access-permissions>
-					<show-info-bar>false</show-info-bar>
-					<show-application-state>false</show-application-state>
-					<show-application-mode>false</show-application-mode>
-				</portlet-application>
-			</container>
-			<container template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
-				<access-permissions>Everyone</access-permissions>
-				<portlet-application>
-					<portlet>
-						<application-ref>gatein-admin-ui</application-ref>
-						<portlet-ref>AdminOption1Portlet</portlet-ref>
-					</portlet>
-					<title>Admin Option1 portlet</title>
-					<access-permissions>Everyone</access-permissions>
-					<show-info-bar>false</show-info-bar>
-					<show-application-state>false</show-application-state>
-					<show-application-mode>false</show-application-mode>
-				</portlet-application>
-				<portlet-application>
-					<portlet>
-						<application-ref>gatein-admin-ui</application-ref>
-						<portlet-ref>AdminOption2Portlet</portlet-ref>
-					</portlet>
-					<title>Admin Option2 portlet</title>
-					<access-permissions>Everyone</access-permissions>
-					<show-info-bar>false</show-info-bar>
-					<show-application-state>false</show-application-state>
-					<show-application-mode>false</show-application-mode>
-				</portlet-application>
-			</container>
-		</container>
+			<show-info-bar>false</show-info-bar>
+			<show-application-state>false</show-application-state>
+			<show-application-mode>false</show-application-mode>
+		</portlet-application>
+	</page>
+
+	<page>
+		<name>option1</name>
+		<title>Admin Option 1</title>
+		<access-permissions>Everyone</access-permissions>
+		<edit-permission>*:/platform/administrators</edit-permission>
+		<portlet-application>
+			<portlet>
+				<application-ref>gatein-admin-ui</application-ref>
+				<portlet-ref>AdminOption1Portlet</portlet-ref>
+			</portlet>
+			<title>Admin Option1 portlet</title>
+			<access-permissions>Everyone</access-permissions>
+			<show-info-bar>false</show-info-bar>
+			<show-application-state>false</show-application-state>
+			<show-application-mode>false</show-application-mode>
+		</portlet-application>
+	</page>
+	<page>
+		<name>option2</name>
+		<title>Admin Option 2</title>
+		<access-permissions>Everyone</access-permissions>
+		<edit-permission>*:/platform/administrators</edit-permission>
+		<portlet-application>
+			<portlet>
+				<application-ref>gatein-admin-ui</application-ref>
+				<portlet-ref>AdminOption2Portlet</portlet-ref>
+			</portlet>
+			<title>Admin Option2 portlet</title>
+			<access-permissions>Everyone</access-permissions>
+			<show-info-bar>false</show-info-bar>
+			<show-application-state>false</show-application-state>
+			<show-application-mode>false</show-application-mode>
+		</portlet-application>
 	</page>
 
 </page-set>

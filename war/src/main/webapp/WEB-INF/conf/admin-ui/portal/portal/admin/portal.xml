@@ -23,7 +23,28 @@
 			<show-info-bar>false</show-info-bar>
 		</portlet-application>
 
-		<page-body> </page-body>
+		<container
+			template="system:/groovy/portal/webui/container/UITableColumnContainer.gtmpl">
+			<access-permissions>Everyone</access-permissions>
+			<container template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+				<access-permissions>Everyone</access-permissions>
+				<portlet-application>
+					<portlet>
+						<application-ref>gatein-admin-ui</application-ref>
+						<portlet-ref>AdminMenuPortlet</portlet-ref>
+					</portlet>
+					<title>Admin Menu portlet</title>
+					<access-permissions>Everyone</access-permissions>
+					<show-info-bar>false</show-info-bar>
+					<show-application-state>false</show-application-state>
+					<show-application-mode>false</show-application-mode>
+				</portlet-application>
+			</container>
+			<container template="system:/groovy/portal/webui/container/UIContainer.gtmpl">
+				<access-permissions>Everyone</access-permissions>
+				<page-body> </page-body>
+			</container>
+		</container>
 
 		<portlet-application>
 			<portlet>

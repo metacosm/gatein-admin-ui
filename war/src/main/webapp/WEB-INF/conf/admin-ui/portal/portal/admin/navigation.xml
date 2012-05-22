@@ -11,6 +11,18 @@
 			<label>#{portal.admin.homepage}</label>
 			<page-reference>portal::admin::homepage</page-reference>
 		</node>
+		<node>
+			<uri>option1</uri>
+			<name>option1</name>
+			<label>#{portal.admin.option1}</label>
+			<page-reference>portal::admin::option1</page-reference>
+		</node>
+		<node>
+			<uri>option2</uri>
+			<name>option2</name>
+			<label>#{portal.admin.option2}</label>
+			<page-reference>portal::admin::option2</page-reference>
+		</node>
 
 		<!-- NOT FOUND node -->
 		<node>

@@ -65,9 +65,27 @@
 			<short-title>Admin Menu Portlet</short-title>
 			<keywords>system</keywords>
 		</portlet-info>
-		<supported-publishing-event>
-			<qname xmlns:admin="urn:gatein:admin:ui:menu:event">admin:MenuItemSelected</qname>
-		</supported-publishing-event>
+	</portlet>
+
+	<portlet>
+		<portlet-name>AdminWelcomePortlet</portlet-name>
+
+		<portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
+		<init-param>
+			<name>javax.portlet.faces.defaultViewId.view</name>
+			<value>/admin/welcome.xhtml</value>
+		</init-param>
+
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Admin Welcome Portlet</title>
+			<short-title>Admin Welcome Portlet</short-title>
+			<keywords>system</keywords>
+		</portlet-info>
 	</portlet>
 
 	<portlet>
@@ -77,10 +95,6 @@
 		<init-param>
 			<name>javax.portlet.faces.defaultViewId.view</name>
 			<value>/admin/option1.xhtml</value>
-		</init-param>
-		<init-param>
-			<name>javax.portlet.faces.bridgeEventHandler</name>
-			<value>org.gatein.admin.event.option1.MenuSelectedEventHandler</value>
 		</init-param>
 
 		<expiration-cache>0</expiration-cache>
@@ -93,9 +107,6 @@
 			<short-title>Admin Option1 Portlet</short-title>
 			<keywords>system</keywords>
 		</portlet-info>
-		<supported-processing-event>
-			<qname xmlns:admin="urn:gatein:admin:ui:menu:event">admin:MenuItemSelected</qname>
-		</supported-processing-event>
 	</portlet>
 
 	<portlet>
@@ -105,10 +116,6 @@
 		<init-param>
 			<name>javax.portlet.faces.defaultViewId.view</name>
 			<value>/admin/option2.xhtml</value>
-		</init-param>
-		<init-param>
-			<name>javax.portlet.faces.bridgeEventHandler</name>
-			<value>org.gatein.admin.event.option2.MenuSelectedEventHandler</value>
 		</init-param>
 
 		<expiration-cache>0</expiration-cache>
@@ -121,13 +128,5 @@
 			<short-title>Admin Option2 Portlet</short-title>
 			<keywords>system</keywords>
 		</portlet-info>
-		<supported-processing-event>
-			<qname xmlns:admin="urn:gatein:admin:ui:menu:event">admin:MenuItemSelected</qname>
-		</supported-processing-event>
 	</portlet>
-
-	<event-definition>
-		<qname xmlns:admin="urn:gatein:admin:ui:menu:event">admin:MenuItemSelected</qname>
-		<value-type>org.gatein.admin.event.MenuSelectedEvent</value-type>
-	</event-definition>
 </portlet-app>
