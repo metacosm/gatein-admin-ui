@@ -1,56 +1,68 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-	<parent>
-		<groupId>org.gatein.ui</groupId>
-		<artifactId>gatein-admin-ui-parent</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
-	</parent>
+   <parent>
+      <groupId>org.gatein.ui</groupId>
+      <artifactId>gatein-admin-ui-parent</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+   </parent>
 
-	<modelVersion>4.0.0</modelVersion>
+   <modelVersion>4.0.0</modelVersion>
 
-	<artifactId>gatein-admin-ui</artifactId>
-	<packaging>ear</packaging>
-	<name>GateIn Admin UI Ear</name>
+   <artifactId>gatein-admin-ui</artifactId>
+   <packaging>ear</packaging>
+   <name>GateIn Admin UI Ear</name>
 
-	<dependencies>
-		<dependency>
-			<groupId>org.gatein.ui</groupId>
-			<artifactId>gatein-admin-ui-config</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>org.gatein.ui</groupId>
-			<artifactId>gatein-admin-ui-war</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
-			<type>war</type>
-		</dependency>
-	</dependencies>
+   <dependencies>
+      <dependency>
+         <groupId>org.gatein.ui</groupId>
+         <artifactId>gatein-admin-ui-config</artifactId>
+         <version>${project.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.gatein.ui</groupId>
+         <artifactId>gatein-admin-ui-conf-war</artifactId>
+         <version>${project.version}</version>
+         <type>war</type>
+      </dependency>
+      <dependency>
+         <groupId>org.gatein.ui</groupId>
+         <artifactId>gatein-admin-ui-portlets</artifactId>
+         <version>${project.version}</version>
+         <type>war</type>
+      </dependency>
+   </dependencies>
 
-	<build>
-		<finalName>${project.artifactId}</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-ear-plugin</artifactId>
-				<configuration>
-					<defaultLibBundleDir>lib</defaultLibBundleDir>
-					<modules>
-						<jarModule>
-							<groupId>org.gatein.ui</groupId>
-							<artifactId>gatein-admin-ui-config</artifactId>
-							<bundleFileName>gatein-admin-ui-config.jar</bundleFileName>
-							<includeInApplicationXml>false</includeInApplicationXml>
-						</jarModule>
-						<webModule>
-							<groupId>org.gatein.ui</groupId>
-							<artifactId>gatein-admin-ui-war</artifactId>
-							<bundleFileName>gatein-admin-ui.war</bundleFileName>
-							<contextRoot>gatein-admin-ui</contextRoot>
-						</webModule>
-					</modules>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+   <build>
+      <finalName>${project.artifactId}</finalName>
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-ear-plugin</artifactId>
+            <configuration>
+               <defaultLibBundleDir>lib</defaultLibBundleDir>
+               <modules>
+                  <jarModule>
+                     <groupId>org.gatein.ui</groupId>
+                     <artifactId>gatein-admin-ui-config</artifactId>
+                     <bundleFileName>gatein-admin-ui-config.jar</bundleFileName>
+                     <includeInApplicationXml>false</includeInApplicationXml>
+                  </jarModule>
+                  <webModule>
+                     <groupId>org.gatein.ui</groupId>
+                     <artifactId>gatein-admin-ui-portlets</artifactId>
+                     <bundleFileName>gatein-admin-ui.war</bundleFileName>
+                     <contextRoot>gatein-admin-ui</contextRoot>
+                  </webModule>
+                  <webModule>
+                     <groupId>org.gatein.ui</groupId>
+                     <artifactId>gatein-admin-ui-conf-war</artifactId>
+                     <bundleFileName>gatein-admin-ui-conf.war</bundleFileName>
+                     <contextRoot>gatein-admin-ui-conf</contextRoot>
+                  </webModule>
+               </modules>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
 </project>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+             version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd
+   http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd">
+
+   <portlet>
+      <portlet-name>AdminFooterPortlet</portlet-name>
+
+      <portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
+      <init-param>
+         <name>javax.portlet.faces.defaultViewId.view</name>
+         <value>/admin/footer.xhtml</value>
+      </init-param>
+
+      <expiration-cache>0</expiration-cache>
+      <supports>
+         <mime-type>text/html</mime-type>
+         <portlet-mode>VIEW</portlet-mode>
+      </supports>
+      <portlet-info>
+         <title>Admin Footer Portlet</title>
+         <short-title>Admin Footer Portlet</short-title>
+         <keywords>system</keywords>
+      </portlet-info>
+   </portlet>
+
+   <portlet>
+      <portlet-name>AdminBannerPortlet</portlet-name>
+
+      <portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
+      <init-param>
+         <name>javax.portlet.faces.defaultViewId.view</name>
+         <value>/admin/banner.xhtml</value>
+      </init-param>
+
+      <expiration-cache>0</expiration-cache>
+      <supports>
+         <mime-type>text/html</mime-type>
+         <portlet-mode>VIEW</portlet-mode>
+      </supports>
+      <portlet-info>
+         <title>Admin Banner Portlet</title>
+         <short-title>Admin Banner Portlet</short-title>
+         <keywords>system</keywords>
+      </portlet-info>
+   </portlet>
+
+   <portlet>
+      <portlet-name>AdminMenuPortlet</portlet-name>
+
+      <portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
+      <init-param>
+         <name>javax.portlet.faces.defaultViewId.view</name>
+         <value>/admin/menu.xhtml</value>
+      </init-param>
+
+      <expiration-cache>0</expiration-cache>
+      <supports>
+         <mime-type>text/html</mime-type>
+         <portlet-mode>VIEW</portlet-mode>
+      </supports>
+      <portlet-info>
+         <title>Admin Menu Portlet</title>
+         <short-title>Admin Menu Portlet</short-title>
+         <keywords>system</keywords>
+      </portlet-info>
+   </portlet>
+
+   <portlet>
+      <portlet-name>AdminWelcomePortlet</portlet-name>
+
+      <portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
+      <init-param>
+         <name>javax.portlet.faces.defaultViewId.view</name>
+         <value>/admin/welcome.xhtml</value>
+      </init-param>
+
+      <expiration-cache>0</expiration-cache>
+      <supports>
+         <mime-type>text/html</mime-type>
+         <portlet-mode>VIEW</portlet-mode>
+      </supports>
+      <portlet-info>
+         <title>Admin Welcome Portlet</title>
+         <short-title>Admin Welcome Portlet</short-title>
+         <keywords>system</keywords>
+      </portlet-info>
+   </portlet>
+
+   <portlet>
+      <portlet-name>AdminOption1Portlet</portlet-name>
+
+      <portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
+      <init-param>
+         <name>javax.portlet.faces.defaultViewId.view</name>
+         <value>/admin/option1.xhtml</value>
+      </init-param>
+
+      <expiration-cache>0</expiration-cache>
+      <supports>
+         <mime-type>text/html</mime-type>
+         <portlet-mode>VIEW</portlet-mode>
+      </supports>
+      <portlet-info>
+         <title>Admin Option1 Portlet</title>
+         <short-title>Admin Option1 Portlet</short-title>
+         <keywords>system</keywords>
+      </portlet-info>
+   </portlet>
+
+   <portlet>
+      <portlet-name>AdminOption2Portlet</portlet-name>
+
+      <portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
+      <init-param>
+         <name>javax.portlet.faces.defaultViewId.view</name>
+         <value>/admin/option2.xhtml</value>
+      </init-param>
+
+      <expiration-cache>0</expiration-cache>
+      <supports>
+         <mime-type>text/html</mime-type>
+         <portlet-mode>VIEW</portlet-mode>
+      </supports>
+      <portlet-info>
+         <title>Admin Option2 Portlet</title>
+         <short-title>Admin Option2 Portlet</short-title>
+         <keywords>system</keywords>
+      </portlet-info>
+   </portlet>
+</portlet-app>
