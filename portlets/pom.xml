@@ -41,6 +41,12 @@
 
    <dependencies>
       <dependency>
+         <groupId>org.gatein.api</groupId>
+         <artifactId>gatein-java-api</artifactId>
+         <version>1.0.0-Beta04-SNAPSHOT</version>
+      </dependency>
+
+      <dependency>
          <groupId>org.exoplatform.kernel</groupId>
          <artifactId>exo.kernel.container</artifactId>
          <version>${org.exoplatform.kernel.version}</version>
