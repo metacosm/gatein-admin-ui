@@ -3,21 +3,47 @@
    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-   >
+      xmlns:b="http://richfaces.org/sandbox/bootstrap" xmlns:c="http://java.sun.com/jsp/jstl/core">
 <h:head>
    <title>Admin Menu Portlet</title>
 </h:head>
 <h:body>
    <h:form>
+      <div class="well" id="sites">
+         <ul class="nav nav-list">
+            <li class="nav-header"><span>Site Management</span></li>
+
+
+            <b:accordion id="sites-accordion">
+               <c:forEach items="#{menu.sites}" var="site">
+                  <b:accordionGroup heading="#{site} Site" id="#{site.id.asString}">
+                     <h:link outcome="#" value="Configuration"/>
+                     <h:link outcome="#" value="Redirects"/>
+                     <h:link outcome="#" value="Layout"/>
+                     <h:link outcome="#" value="Pages and Navigation"/>
+                  </b:accordionGroup>
+               </c:forEach>
+            </b:accordion>
+         </ul>
+         <button class="link">Show 4 other Sites</button>
+         <a href="#" class="nav-header-link">Manage</a>
+
+         <div class="actions">
+            <div class="btn-group">
+               <button class="btn" rel="tooltip" title="Add Site"><i class="icon-plus-sign">Add Site</i></button>
+               <button class="btn" rel="tooltip" title="Delete Selected Site"><i
+                  class="icon-trash">Delete Selected Site</i></button>
+            </div>
+         </div>
+      </div>
+      <!-- End .well -->
       <div class="well" id="server">
          <ul class="nav nav-list">
             <li class="nav-header"><span>Server Administration</span></li>
-            <li>
-               <h:outputLink value="#{menu.getNodeURL('option1')}">Option 1</h:outputLink>
-            </li>
-            <li>
-               <h:outputLink value="#{menu.getNodeURL('option2')}">Option 2</h:outputLink>
-            </li>
+            <li><a href="#"><i class="icon-briefcase"></i> Applications</a></li>
+            <li><a href="#"><i class="icon-user"></i> Users and Groups</a></li>
+            <li><a href="#"><i class="icon-share"></i> WSRP</a></li>
+            <li><a href="#"><i class="icon-plus"></i> More</a></li>
          </ul>
       </div>
    </h:form>

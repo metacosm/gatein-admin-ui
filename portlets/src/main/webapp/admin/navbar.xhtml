@@ -1,0 +1,39 @@
+<ui:decorate template="template.xhtml" xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:ui="http://java.sun.com/jsf/facelets"
+             xmlns:h="http://java.sun.com/jsf/html"
+             xmlns:f="http://java.sun.com/jsf/core"
+             xmlns:b="http://richfaces.org/sandbox/bootstrap">
+
+   <ui:define name="content">
+      <b:navbar fixed="top">
+         <f:facet name="brand">
+            <h:link outcome="/" value="GateIn" styleClass="brand" id="logo">
+               <h:graphicImage url="#{resource['img/logo.png']}"/>
+            </h:link>
+         </f:facet>
+
+         <b:positionGroup horizontal="left">
+            <b:menuGroup label="Sites">
+               <h:link outcome="/" value="Classic"/>
+               <h:link outcome="/" value="Admin"/>
+            </b:menuGroup>
+            <b:menuGroup label="Spaces">
+               <h:link outcome="/" value="Classic"/>
+               <h:link outcome="/" value="Admin"/>
+            </b:menuGroup></b:positionGroup>
+
+         <b:positionGroup horizontal="right">
+            <b:menuGroup label="Settings">
+               <h:link outcome="/" value="Permissions"/>
+               <h:link outcome="/" value="Redirects"/>
+            </b:menuGroup>
+            <b:menuGroup label="Admin">
+               <h:link outcome="/" value="Account and Profile"/>
+               <h:link outcome="/" value="Change Language"/>
+               <hr/>
+               <h:link outcome="/" value="Sign out"/>
+            </b:menuGroup>
+         </b:positionGroup>
+      </b:navbar>
+   </ui:define>
+</ui:decorate>

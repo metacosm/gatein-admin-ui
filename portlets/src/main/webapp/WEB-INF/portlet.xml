@@ -31,7 +31,7 @@
       <portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
       <init-param>
          <name>javax.portlet.faces.defaultViewId.view</name>
-         <value>/admin/banner.xhtml</value>
+         <value>/admin/navbar.xhtml</value>
       </init-param>
 
       <expiration-cache>0</expiration-cache>

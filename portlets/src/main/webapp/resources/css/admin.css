@@ -1,0 +1,520 @@
+/* General styles */
+
+body {
+   padding-top: 42px;
+   background: url(../img/body-bg.jpg) repeat left top;
+}
+
+#wrapper {
+   margin-top: -2px;
+}
+
+.icon-gray {
+   background-image: url("../img/glyphicons-halflings-gray.png");
+}
+
+i {
+   text-indent: -99999px;
+}
+
+a {
+   color: #1c5182;
+}
+
+a:hover {
+   color: #285786;
+}
+
+h1,
+h2,
+h3,
+legend {
+   font-family: 'Ubuntu';
+}
+
+button.link {
+   background: none;
+   border: none;
+   color: #0088CC;
+   padding: 0;
+}
+
+button.link:hover {
+   color: #005580;
+   text-decoration: underline;
+}
+
+.hidden-element {
+   display: none !important;
+}
+
+label {
+   display: inline-block;
+}
+
+.btn-primary {
+   background-color: #3b6c9e;
+   background-image: none;
+   border-color: #1c4e7e;
+}
+
+.btn-primary:hover {
+   background-color: #285786;
+}
+
+.btn-primary[disabled],
+.btn-primary.disabled {
+   background-color: #3b6c9e;
+}
+
+.icon-users {
+   background-position: 0 -168px;
+}
+
+.icon-closed {
+   background-position: -24px -168px;
+}
+
+.icon-opened {
+   background-position: -48px -168px;
+}
+
+/* Header */
+
+a#logo {
+   text-indent: -99999px;
+   display: inline-block;
+   width: 21px;
+   height: 40px;
+   background-repeat: no-repeat;
+   background-image: url(../img/logo.png);
+   background-position: center center;
+   padding: 0 20px;
+}
+
+.navbar .divider-vertical {
+   margin: 0 5px;
+}
+
+#add:hover i,
+#username:hover i.icon-user {
+   background-image: url("../img/glyphicons-halflings-white.png");
+}
+
+ul.dropdown-menu {
+   z-index: 2000;
+}
+
+#username i.icon-user {
+   margin-right: 1px;
+}
+
+/* Aside */
+
+aside {
+   margin-top: 30px;
+}
+
+.well {
+   padding: 0;
+   background-color: transparent;
+   border: none;
+   border-radius: 0;
+   box-shadow: none;
+}
+
+#sites .nav-list {
+   box-shadow: 0px 1px 0px #fff;
+}
+
+.nav-list a {
+   color: #444;
+   font-size: 14px;
+   border-radius: 5px 0 0 5px;
+}
+
+.nav-list a:hover {
+   background-color: rgba(0, 0, 0, 0.04);
+   text-decoration: none;
+}
+
+.nav-list a i {
+   margin-top: 2px;
+}
+
+.nav .nav-header {
+   font-size: 12px;
+   line-height: 14px;
+   padding-left: 0;
+   color: #95999e;
+   text-shadow: 0px 1px 0px white;
+   border-bottom: 1px solid #aaa;
+   margin-bottom: 5px;
+   box-shadow: 0px 1px 0px white;
+}
+
+.nav-list > li > ul {
+   margin-left: 0;
+   margin-bottom: 4px;
+}
+
+.nav-list > li > ul > li {
+   list-style: none;
+}
+
+.nav-list > li > ul > li a {
+   padding: 0 15px 0 45px;
+   display: block;
+   margin-left: -15px;
+   margin-right: -15px;
+   line-height: 30px;
+}
+
+.nav-list > li > a {
+   border-top: 1px solid #ddd;
+   line-height: 34px;
+   padding: 0 15px;
+   box-shadow: inset 0px 1px 0px #fff;
+}
+
+.nav-list > li:nth-child(2) > a {
+   border: none;
+   box-shadow: none;
+}
+
+.well#sites .nav-list > li:last-child > a {
+   border-bottom: 1px solid #ddd;
+}
+
+.nav-list > .active > a {
+   text-shadow: 0px 1px 0px #000;
+}
+
+.nav-list .active > a {
+   font-weight: bold;
+}
+
+.nav-list .active > a i {
+   background-image: url("../img/glyphicons-halflings-white.png");
+}
+
+.nav-list > .active > ul > .active > a {
+   color: #1c5182;
+   text-shadow: 0px 1px 0px #fff;
+}
+
+.nav-list > .active > a,
+.nav-list > .active > a:hover {
+   background-color: #3b6c9e;
+}
+
+.nav-list li#pages-nav {
+   position: relative;
+}
+
+.nav-list a#add-page {
+   position: absolute;
+   padding: 0;
+   right: 10px;
+   top: 7px;
+   line-height: 16px;
+}
+
+.nav-list a#add-page:hover {
+   background-color: transparent;
+}
+
+.well button.link {
+   margin-left: 15px;
+   margin-top: 7px;
+   margin-bottom: 8px;
+   font-size: 12px;
+   color: #999;
+}
+
+.well .actions {
+   border-top: 1px solid #aaa;
+   background-image: linear-gradient(center top, #FFFFFF, #E6E6E6);
+   background-image: -moz-linear-gradient(center top, #FFFFFF, #E6E6E6);
+   background-image: -webkit-linear-gradient(center top, #FFFFFF, #E6E6E6);
+   background-image: -o-linear-gradient(center top, #FFFFFF, #E6E6E6);
+   border-radius: 0px 0px 0px 5px;
+}
+
+.well .actions button {
+   border-top: none;
+   border-bottom: none;
+   box-shadow: 1px 0px 0px #fff;
+   border-left: none;
+   border-color: #ddd;
+}
+
+.well .actions .btn-group > .btn:first-child {
+   margin-right: 2px;
+}
+
+.well .actions .btn-group > .btn:last-child {
+   border-radius: 0;
+}
+
+.well#server {
+   border-bottom: 1px solid #ddd;
+   box-shadow: 0 1px 0 #fff;
+}
+
+/* Content */
+
+#container-right {
+   float: right;
+   background-color: #fff;
+   margin-left: 0;
+   padding: 30px;
+   width: 840px; /* Should go into Responsive */
+   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+   border-radius: 0px 0px 10px 10px;
+}
+
+h1 {
+   border-bottom: 1px solid #ddd;
+   margin-bottom: 10px;
+   margin-top: -7px;
+   padding-bottom: 5px;
+   margin-left: 0;
+   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+   font-size: 26px;
+   font-weight: normal;
+}
+
+p.subtitle {
+   text-align: right;
+   margin-bottom: 5px;
+   color: #999;
+}
+
+span.required {
+   color: red;
+}
+
+#container-right form {
+   margin-bottom: 0;
+}
+
+legend {
+   border: none;
+   margin-bottom: 0;
+   cursor: pointer;
+   display: inline-block;
+   width: auto;
+   font-size: 20px;
+}
+
+legend i {
+   margin-top: 3px;
+   margin-right: 3px;
+}
+
+fieldset {
+   margin-bottom: 20px;
+}
+
+#access-permission .controls {
+   margin-top: 3px;
+}
+
+.controls i {
+   margin-top: 3px;
+   margin-left: 5px;
+}
+
+#access-permission .alert {
+   margin-top: 8px;
+   float: left;
+   clear: both;
+   margin-bottom: 0;
+}
+
+#permission-settings table {
+   margin-top: 5px;
+   margin-bottom: 0;
+}
+
+a.inline {
+   margin-left: 10px;
+   display: inline-block;
+   margin-bottom: -5px;
+}
+
+.control-group table {
+   margin-bottom: 0;
+}
+
+th.hidden {
+   display: none;
+}
+
+td.styles-hidden,
+.table-striped tbody tr td.styles-hidden {
+   border-top: none;
+   background-color: #fff;
+}
+
+td.actions a {
+   margin-right: 5px;
+}
+
+.form-actions {
+   padding: 10px 0 0 0;
+   background: transparent;
+   border-top: none;
+   margin: 0;
+   text-align: right;
+   border-top: 1px solid #ddd;
+   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05) inset;
+}
+
+/* Footer */
+
+footer.span9 {
+   float: right;
+   padding-top: 5px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+   width: 880px; /*should be in the responsive */
+}
+
+footer p {
+   font-size: 12px;
+   color: #a7a7a7;
+   float: left;
+}
+
+footer a {
+   color: #666;
+}
+
+footer > ul {
+   float: right;
+   margin-right: 20px;
+}
+
+footer > ul > li {
+   display: inline-block;
+   padding-left: 9px;
+   margin-left: 5px;
+   background: url(../img/footer-separator.png) no-repeat left center;
+}
+
+footer > ul > li:first-child {
+   background: none;
+}
+
+footer ul li a {
+   font-size: 12px;
+}
+
+/* Alerts */
+
+.alert-container {
+   position: fixed;
+   z-index: 1040;
+   top: 25px;
+   text-align: center;
+   left: 0;
+   width: 100%;
+}
+
+.alert {
+   padding-top: 3px;
+   padding-bottom: 3px;
+   display: inline-block;
+}
+
+/* Modal Permission Settings */
+
+.permission-group {
+   width: 45%;
+}
+
+.permission-group .select {
+   margin-top: 5px;
+}
+
+.select {
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   list-style: none;
+   margin: 0;
+   opacity: 0.5;
+}
+
+.select.enabled {
+   opacity: 1;
+}
+
+.select li {
+   position: relative;
+}
+
+.select.enabled li span:hover {
+   background-color: #f0f0f0;
+   cursor: pointer;
+}
+
+.select li i {
+   position: absolute;
+   left: 5px;
+   top: 3px;
+}
+
+.select li span {
+   display: block;
+   padding: 3px 10px 3px 22px;
+}
+
+.select li:first-child span {
+   border-top-right-radius: 5px;
+   border-top-left-radius: 5px;
+}
+
+.select li:last-child span {
+   border-bottom-right-radius: 5px;
+   border-bottom-left-radius: 5px;
+}
+
+.select.enabled li span.selected {
+   background-color: #0088CC;
+   color: #FFFFFF;
+   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.select ul {
+   list-style: none;
+   margin-left: 0;
+}
+
+.select ul.second li span {
+   padding-left: 40px;
+}
+
+.select ul.second li i {
+   left: 20px;
+}
+
+.select ul.third li span {
+   padding-left: 60px;
+}
+
+.select ul.third li i {
+   left: 40px;
+}
+
+#modal-permission .modal-body > span {
+   color: #999999;
+   display: inline-block;
+   font-size: 12px;
+   margin-top: 64px;
+   text-align: center;
+   text-transform: uppercase;
+   width: 10%;
+}
+
