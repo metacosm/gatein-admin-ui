@@ -1,51 +1,70 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:b="http://richfaces.org/sandbox/bootstrap" xmlns:c="http://java.sun.com/jsp/jstl/core">
-<h:head>
-   <title>Admin Menu Portlet</title>
-</h:head>
-<h:body>
-   <h:form>
-      <div class="well" id="sites">
-         <ul class="nav nav-list">
-            <li class="nav-header"><span>Site Management</span></li>
+<ui:decorate template="../template.xhtml"
+             xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:h="http://java.sun.com/jsf/html"
+             xmlns:b="http://richfaces.org/sandbox/bootstrap" xmlns:c="http://java.sun.com/jsp/jstl/core"
+             xmlns:ui="http://java.sun.com/jsf/facelets">
+   <ui:define name="content">
+      <h:form>
+         <aside class="span3">
+            <div class="well" id="sites">
+               <ul class="nav nav-list">
+                  <li class="nav-header"><b:icon value="globe"/><span>Sites</span></li>
+                  <li class="active">
+                     <ul id="sites-list">
+                        <c:forEach items="#{menu.onlySites}" var="site">
+                           <c:set var="siteId" value="#{site.id.asString}"/>
+                           <li id="#{siteId}">
+                              <h:outputText value="#{site.label.getValue(true)}"/>
+                              <ul>
+                                 <li id="#{siteId}-configuration"><h:commandLink action="#{menu.select(siteId)}" value="Configuration"/></li>
+                                 <li id="#{siteId}-redirects"><h:commandLink action="#" value="Redirects"/></li>
+                                 <li id="#{siteId}-layout"><h:commandLink action="Layout" value="Layout"/></li>
+                                 <li id="#{siteId}-navigation"><h:commandLink action="Pages and Navigation" value="Pages and Navigation"/></li>
+                              </ul>
+                           </li>
+                        </c:forEach>
+                     </ul>
+                  </li>
+                  <li class="nav-header"><b:icon value="asterisk"/><span>Spaces</span></li>
+                  <li>
+                     <ul id="spaces-list">
+                        <c:forEach items="#{menu.onlySpaces}" var="space">
+                           <c:set var="spaceId" value="#{space.id.asString}"/>
+                           <li id="#{spaceId}">
+                              <h:outputText value="#{space.label.getValue(true)}"/>
+                              <ul>
+                                 <li id="#{spaceId}-configuration"><h:commandLink action="../configuration/configuration.xhtml" value="Configuration"/></li>
+                                 <li id="#{spaceId}-redirects"><h:commandLink action="#" value="Redirects"/></li>
+                                 <li id="#{spaceId}-layout"><h:commandLink action="Layout" value="Layout"/></li>
+                                 <li id="#{spaceId}-navigation"><h:commandLink action="Pages and Navigation" value="Pages and Navigation"/></li>
+                              </ul>
+                           </li>
+                        </c:forEach>
+                     </ul>
+                  </li>
+               </ul>
 
+               <button class="link">Show 4 other Sites</button>
+               <a href="#" class="nav-header-link">Manage</a>
 
-            <b:accordion id="sites-accordion">
-               <c:forEach items="#{menu.sites}" var="site">
-                  <b:accordionGroup heading="#{site} Site" id="#{site.id.asString}">
-                     <h:link outcome="#" value="Configuration"/>
-                     <h:link outcome="#" value="Redirects"/>
-                     <h:link outcome="#" value="Layout"/>
-                     <h:link outcome="#" value="Pages and Navigation"/>
-                  </b:accordionGroup>
-               </c:forEach>
-            </b:accordion>
-         </ul>
-         <button class="link">Show 4 other Sites</button>
-         <a href="#" class="nav-header-link">Manage</a>
-
-         <div class="actions">
-            <div class="btn-group">
-               <button class="btn" rel="tooltip" title="Add Site"><i class="icon-plus-sign">Add Site</i></button>
-               <button class="btn" rel="tooltip" title="Delete Selected Site"><i
-                  class="icon-trash">Delete Selected Site</i></button>
+               <div class="actions">
+                  <div class="btn-group">
+                     <button class="btn" rel="tooltip" title="Add Site"><i class="icon-plus-sign">Add Site</i></button>
+                     <button class="btn" rel="tooltip" title="Delete Selected Site"><i
+                        class="icon-trash">Delete Selected Site</i></button>
+                  </div>
+               </div>
             </div>
-         </div>
-      </div>
-      <!-- End .well -->
-      <div class="well" id="server">
-         <ul class="nav nav-list">
-            <li class="nav-header"><span>Server Administration</span></li>
-            <li><a href="#"><i class="icon-briefcase"></i> Applications</a></li>
-            <li><a href="#"><i class="icon-user"></i> Users and Groups</a></li>
-            <li><a href="#"><i class="icon-share"></i> WSRP</a></li>
-            <li><a href="#"><i class="icon-plus"></i> More</a></li>
-         </ul>
-      </div>
-   </h:form>
-</h:body>
-</html>
+            <!-- End .well -->
+            <div class="well" id="server">
+               <ul class="nav nav-list">
+                  <li class="nav-header"><span>Server Administration</span></li>
+                  <li><a href="#"><b:icon value="briefcase"/> Applications</a></li>
+                  <li><a href="#"><b:icon value="user"/> Users and Groups</a></li>
+                  <li><a href="#"><b:icon value="share"/> WSRP</a></li>
+                  <li><a href="#"><b:icon value="plus"/> More</a></li>
+               </ul>
+            </div>
+         </aside>
+      </h:form></ui:define>
+</ui:decorate>
