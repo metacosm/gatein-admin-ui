@@ -21,6 +21,7 @@ import java.util.List;
 @SessionScoped
 public class MenuController
 {
+   private String selectedSite;
 
    public String getNodeURL(String name)
    {
@@ -77,4 +78,14 @@ public class MenuController
       return API.getGateIn().getSites(Site.Type.SPACE);
    }
 
+   public String select(String siteId)
+   {
+      selectedSite = siteId;
+      return "configuration/configuration";
+   }
+
+   public String getSelectedSite()
+   {
+      return selectedSite;
+   }
 }
