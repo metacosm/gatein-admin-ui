@@ -22,7 +22,33 @@
 
 package org.gatein.admin.beans.org.gatein.admin.beans.configuration;
 
+import org.gatein.admin.API;
+import org.gatein.admin.beans.MenuController;
+import org.gatein.api.portal.Site;
+
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
+
 /** @author <a href="mailto:chris.laprun@jboss.com">Chris Laprun</a> */
+@ManagedBean(name = "configuration")
+@RequestScoped
 public class ConfigurationController
 {
+   @ManagedProperty(value = "#{menu.selectedSite}")
+   private String selectedSiteId;
+   private Site site;
+
+   @PostConstruct
+   public void init()
+   {
+      site = API.getGateIn().getSite(Site.Id.fromString(selectedSiteId));
+   }
+
+   public Site getSelectedSite()
+   {
+      return site;
+   }
 }
