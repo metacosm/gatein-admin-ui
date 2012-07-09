@@ -6,6 +6,7 @@ import org.exoplatform.portal.mop.SiteType;
 import org.exoplatform.web.application.RequestContext;
 import org.exoplatform.web.url.navigation.NavigationResource;
 import org.exoplatform.web.url.navigation.NodeURL;
+import org.gatein.admin.API;
 import org.gatein.api.GateIn;
 import org.gatein.api.commons.Filter;
 import org.gatein.api.portal.Site;
@@ -29,9 +30,9 @@ public class MenuController
       return url.toString();
    }
 
-   public Iterable<? extends Site> getSites()
+   public Iterable<Site> getSites()
    {
-      final List<Site> sites = getGateIn().getSites(new Filter<Site>()
+      final List<Site> sites = API.getGateIn().getSites(new Filter<Site>()
       {
          @Override
          public boolean accept(Site site)
@@ -66,8 +67,14 @@ public class MenuController
       return sites;
    }
 
-   GateIn getGateIn()
+   public Iterable<Site> getOnlySites()
    {
-      return (GateIn)ExoContainerContext.getCurrentContainer().getComponentInstanceOfType(GateIn.class);
+      return API.getGateIn().getSites(Site.Type.SITE);
    }
+
+   public Iterable<Site> getOnlySpaces()
+   {
+      return API.getGateIn().getSites(Site.Type.SPACE);
+   }
+
 }

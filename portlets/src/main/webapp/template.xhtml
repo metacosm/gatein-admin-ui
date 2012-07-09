@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition>
+
+   <!-- Styles -->
+   <link type="text/css" href="#{resource['css/admin.css']}" rel="stylesheet"/>
+   <ui:remove>
+      <link type="text/css" href="#{resource['css/bootstrap.css']}" rel="stylesheet"/>
+      <link type="text/css" href="#{resource['css/bootstrap-responsive.css']}" rel="stylesheet"/>
+   </ui:remove>
+
+   <!-- Fonts -->
+   <link type="text/css" href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'/>
+
+   <!-- JS -->
+   <ui:remove>
+      <script src="#{resource['js/jquery-1.7.2.min.js']}" type="text/javascript"></script>
+      <script src="#{resource['js/bootstrap.js']}" type="text/javascript"></script>
+      <script src="#{resource['js/bootstrap-dropdown.js']}" type="text/javascript"></script>
+      <script src="#{resource['js/bootstrap-tooltip.js']}" type="text/javascript"></script>
+      <script src="#{resource['js/bootstrap-button.js']}" type="text/javascript"></script>
+      <script src="#{resource['js/bootstrap-alert.js']}" type="text/javascript"></script>
+      <script src="#{resource['js/bootstrap-modal.js']}" type="text/javascript"></script>
+      <script src="#{resource['js/admin.js']}" type="text/javascript"></script>
+   </ui:remove>
+
+   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+   <!--[if lt IE 9]>
+     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+   <![endif]-->
+
+   <f:loadBundle basename="locale/admin" var="i18n"/>
+
+   <ui:insert name="content">content goes here</ui:insert>
+</ui:composition>
+
+</html>
