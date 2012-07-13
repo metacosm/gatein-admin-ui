@@ -3,4 +3,11 @@
               xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
               version="2.1">
 
+   <navigation-rule>
+      <from-view-id>/admin/menu.xhtml</from-view-id>
+      <navigation-case>
+         <from-outcome>success</from-outcome>
+         <to-view-id>/configuration/configuration.xhtml</to-view-id>
+      </navigation-case>
+   </navigation-rule>
 </faces-config>
