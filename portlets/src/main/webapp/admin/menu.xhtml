@@ -11,18 +11,20 @@
                   <li class="nav-header"><b:icon value="globe"/><span>Sites</span></li>
                   <li class="active">
                      <ul id="sites-list">
-                        <c:forEach items="#{menu.onlySites}" var="site">
+                        <ui:repeat value="#{menu.onlySites}" var="site">
                            <c:set var="siteId" value="#{site.id.asString}"/>
                            <li id="#{siteId}">
                               <h:outputText value="#{site.label.getValue(true)}"/>
                               <ul>
-                                 <li id="#{siteId}-configuration"><h:commandLink action="#{menu.select(siteId)}" value="Configuration"/></li>
+                                 <li id="#{siteId}-configuration"><h:commandLink action="#{menu.select(siteId)}"
+                                                                                 value="Configuration"/></li>
                                  <li id="#{siteId}-redirects"><h:commandLink action="#" value="Redirects"/></li>
                                  <li id="#{siteId}-layout"><h:commandLink action="Layout" value="Layout"/></li>
-                                 <li id="#{siteId}-navigation"><h:commandLink action="Pages and Navigation" value="Pages and Navigation"/></li>
+                                 <li id="#{siteId}-navigation"><h:commandLink action="Pages and Navigation"
+                                                                              value="Pages and Navigation"/></li>
                               </ul>
                            </li>
-                        </c:forEach>
+                        </ui:repeat>
                      </ul>
                   </li>
                   <li class="nav-header"><b:icon value="asterisk"/><span>Spaces</span></li>
@@ -33,10 +35,12 @@
                            <li id="#{spaceId}">
                               <h:outputText value="#{space.label.getValue(true)}"/>
                               <ul>
-                                 <li id="#{spaceId}-configuration"><h:commandLink action="../configuration/configuration.xhtml" value="Configuration"/></li>
+                                 <li id="#{spaceId}-configuration"><h:commandLink
+                                    action="../configuration/configuration.xhtml" value="Configuration"/></li>
                                  <li id="#{spaceId}-redirects"><h:commandLink action="#" value="Redirects"/></li>
                                  <li id="#{spaceId}-layout"><h:commandLink action="Layout" value="Layout"/></li>
-                                 <li id="#{spaceId}-navigation"><h:commandLink action="Pages and Navigation" value="Pages and Navigation"/></li>
+                                 <li id="#{spaceId}-navigation"><h:commandLink action="Pages and Navigation"
+                                                                               value="Pages and Navigation"/></li>
                               </ul>
                            </li>
                         </c:forEach>
