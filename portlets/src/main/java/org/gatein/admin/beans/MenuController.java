@@ -88,4 +88,9 @@ public class MenuController
    {
       return selectedSite;
    }
+
+   public void setSelectedSite(String selectedSite)
+   {
+      this.selectedSite = selectedSite;
+   }
 }
