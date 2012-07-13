@@ -81,7 +81,7 @@ public class MenuController
    public String select(String siteId)
    {
       selectedSite = siteId;
-      return "configuration/configuration";
+      return "success";
    }
 
    public String getSelectedSite()
