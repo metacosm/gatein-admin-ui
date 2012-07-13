@@ -20,7 +20,7 @@
 * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
 */
 
-package org.gatein.admin.beans.org.gatein.admin.beans.configuration;
+package org.gatein.admin.beans.configuration;
 
 import org.gatein.admin.API;
 import org.gatein.admin.beans.MenuController;
