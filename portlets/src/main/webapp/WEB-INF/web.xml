@@ -6,6 +6,10 @@
    <display-name>admin-ui</display-name>
 
    <context-param>
+      <param-name>facelets.DEVELOPMENT</param-name>
+      <param-value>true</param-value>
+   </context-param>
+   <context-param>
       <param-name>javax.portlet.faces.renderPolicy</param-name>
       <param-value>ALWAYS_DELEGATE</param-value>
    </context-param>
