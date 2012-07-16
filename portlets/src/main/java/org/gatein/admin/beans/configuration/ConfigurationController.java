@@ -39,6 +39,7 @@ public class ConfigurationController
    private String selectedSiteId;
    private Site site;
    private String selectedLocale;
+   private String selectedSkin;
 
    @PostConstruct
    public void init()
@@ -69,5 +70,15 @@ public class ConfigurationController
    public String getSelectedLocale()
    {
       return selectedLocale;
+   }
+
+   public void setSelectedSkin(String selectedSkin)
+   {
+      this.selectedSkin = selectedSkin;
+   }
+
+   public String getSelectedSkin()
+   {
+      return selectedSkin;
    }
 }

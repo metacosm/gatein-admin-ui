@@ -37,10 +37,9 @@
                <label for="skin" class="control-label">Skin </label>
 
                <div class="controls">
-                  <select id="skin">
-                     <option>Default</option>
-                     <option>Minimalist</option>
-                  </select>
+                  <h:selectOneMenu id="skin" value="#{configuration.selectedSkin}">
+                     <f:selectItems value="#{api.availableSkins}" var="s" itemLabel="#{s}" itemValue="#{s}"/>
+                  </h:selectOneMenu>
                </div>
             </div>
             <!-- End .control-group -->
