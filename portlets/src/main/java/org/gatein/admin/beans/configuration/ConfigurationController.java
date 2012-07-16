@@ -38,6 +38,7 @@ public class ConfigurationController
    @ManagedProperty(value = "#{menu.selectedSite}")
    private String selectedSiteId;
    private Site site;
+   private String selectedLocale;
 
    @PostConstruct
    public void init()
@@ -58,5 +59,15 @@ public class ConfigurationController
    public Site getSelectedSite()
    {
       return site;
+   }
+
+   public void setSelectedLocale(String selectedLocale)
+   {
+      this.selectedLocale = selectedLocale;
+   }
+
+   public String getSelectedLocale()
+   {
+      return selectedLocale;
    }
 }

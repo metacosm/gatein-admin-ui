@@ -1,7 +1,8 @@
 <ui:decorate template="../template.xhtml"
              xmlns="http://www.w3.org/1999/xhtml"
              xmlns:ui="http://java.sun.com/jsf/facelets"
-             xmlns:h="http://java.sun.com/jsf/html" xmlns:b="http://richfaces.org/sandbox/bootstrap">
+             xmlns:h="http://java.sun.com/jsf/html" xmlns:b="http://richfaces.org/sandbox/bootstrap"
+             xmlns:f="http://java.sun.com/jsf/core">
 <ui:define name="content">
    <div id="container-right" class="span9">
       <h1>Site's Configs</h1>
@@ -25,10 +26,10 @@
                <label for="language" class="control-label">Language </label>
 
                <div class="controls">
-                  <select id="language">
-                     <option>English</option>
-                     <option>Portuguese</option>
-                  </select>
+                  <h:selectOneMenu id="language" value="#{configuration.selectedLocale}">
+                     <f:selectItems value="#{api.supportedLocales}" var="l" itemLabel="#{l.displayLanguage}"
+                                    itemValue="#{l}"/>
+                  </h:selectOneMenu>
                </div>
             </div>
             <!-- End .control-group -->
