@@ -24,8 +24,12 @@ package org.gatein.admin;
 
 import org.exoplatform.container.ExoContainerContext;
 import org.gatein.api.GateIn;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 /** @author <a href="mailto:chris.laprun@jboss.com">Chris Laprun</a> */
+@ManagedBean(name = "api")
+@SessionScoped
 public class API
 {
    private static GateIn GATE_IN;
