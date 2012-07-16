@@ -59,7 +59,7 @@ public class API
       return getGateIn().getSites(Site.Type.SPACE);
    }
 
-   public static Iterable<Locale> getSupportedLocales()
+   public Iterable<Locale> getSupportedLocales()
    {
       final LocaleConfigService localeService = (LocaleConfigService)ExoContainerContext.getCurrentContainer().getComponentInstanceOfType(LocaleConfigService.class);
       final Iterator<LocaleConfig> configIterator = localeService.getLocalConfigs().iterator();
