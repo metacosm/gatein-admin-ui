@@ -30,20 +30,20 @@
                   <li class="nav-header"><b:icon value="asterisk"/><span>Spaces</span></li>
                   <li>
                      <ul id="spaces-list">
-                        <c:forEach items="#{api.onlySpaces}" var="space">
+                        <ui:repeat var="space" value="#{api.onlySpaces}">
                            <c:set var="spaceId" value="#{space.id.asString}"/>
                            <li id="#{spaceId}">
                               <h:outputText value="#{space.label.getValue(true)}"/>
                               <ul>
-                                 <li id="#{spaceId}-configuration"><h:commandLink
-                                    action="../configuration/configuration.xhtml" value="Configuration"/></li>
+                                 <li id="#{spaceId}-configuration"><h:commandLink action="#{menu.select(spaceId)}"
+                                                                                  value="Configuration"/></li>
                                  <li id="#{spaceId}-redirects"><h:commandLink action="#" value="Redirects"/></li>
                                  <li id="#{spaceId}-layout"><h:commandLink action="Layout" value="Layout"/></li>
                                  <li id="#{spaceId}-navigation"><h:commandLink action="Pages and Navigation"
                                                                                value="Pages and Navigation"/></li>
                               </ul>
                            </li>
-                        </c:forEach>
+                        </ui:repeat>
                      </ul>
                   </li>
                </ul>
