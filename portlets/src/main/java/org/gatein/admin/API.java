@@ -23,6 +23,7 @@
 package org.gatein.admin;
 
 import org.exoplatform.container.ExoContainerContext;
+import org.exoplatform.portal.resource.SkinService;
 import org.exoplatform.services.resources.LocaleConfig;
 import org.exoplatform.services.resources.LocaleConfigService;
 import org.gatein.api.GateIn;
@@ -44,9 +45,15 @@ public class API
    {
       if (GATE_IN == null)
       {
-         GATE_IN = (GateIn)ExoContainerContext.getCurrentContainer().getComponentInstanceOfType(GateIn.class);
+         GATE_IN = getService(GateIn.class);
       }
       return GATE_IN;
+   }
+
+   private static <T> T getService(Class<T> serviceType)
+   {
+      final Object service = ExoContainerContext.getCurrentContainer().getComponentInstanceOfType(serviceType);
+      return serviceType.cast(service);
    }
 
    public Iterable<Site> getOnlySites()
@@ -88,6 +95,19 @@ public class API
                   throw new UnsupportedOperationException();
                }
             };
+         }
+      };
+   }
+
+   public Iterable<String> getAvailableSkins()
+   {
+      final SkinService skinService = getService(SkinService.class);
+      return new Iterable<String>()
+      {
+         @Override
+         public Iterator<String> iterator()
+         {
+            return skinService.getAvailableSkinNames().iterator();
          }
       };
    }
