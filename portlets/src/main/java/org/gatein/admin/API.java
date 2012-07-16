@@ -24,6 +24,7 @@ package org.gatein.admin;
 
 import org.exoplatform.container.ExoContainerContext;
 import org.gatein.api.GateIn;
+import org.gatein.api.portal.Site;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -43,4 +44,13 @@ public class API
       return GATE_IN;
    }
 
+   public Iterable<Site> getOnlySites()
+   {
+      return getGateIn().getSites(Site.Type.SITE);
+   }
+
+   public Iterable<Site> getOnlySpaces()
+   {
+      return getGateIn().getSites(Site.Type.SPACE);
+   }
 }

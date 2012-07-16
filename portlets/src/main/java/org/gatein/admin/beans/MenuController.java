@@ -31,17 +31,6 @@ public class MenuController
       return url.toString();
    }
 
-
-   public Iterable<Site> getOnlySites()
-   {
-      return API.getGateIn().getSites(Site.Type.SITE);
-   }
-
-   public Iterable<Site> getOnlySpaces()
-   {
-      return API.getGateIn().getSites(Site.Type.SPACE);
-   }
-
    public String select(String siteId)
    {
       selectedSite = siteId;
