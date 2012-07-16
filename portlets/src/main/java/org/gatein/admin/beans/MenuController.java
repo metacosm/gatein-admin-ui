@@ -31,42 +31,6 @@ public class MenuController
       return url.toString();
    }
 
-   public Iterable<Site> getSites()
-   {
-      final List<Site> sites = API.getGateIn().getSites(new Filter<Site>()
-      {
-         @Override
-         public boolean accept(Site site)
-         {
-            final Site.Type type = site.getType();
-            return Site.Type.SITE == type || Site.Type.SPACE == type;
-         }
-      });
-      Collections.sort(sites, new Comparator<Site>()
-      {
-         /**
-          * Order sites by type first (so that spaces show up after "regular" sites) and then by name.
-          * @param site1
-          * @param site2
-          * @return
-          */
-         @Override
-         public int compare(Site site1, Site site2)
-         {
-            final Site.Type type1 = site1.getType();
-            final Site.Type type2 = site2.getType();
-            if (type1 != type2)
-            {
-               return type1.compareTo(type2);
-            }
-            else
-            {
-               return site1.getName().compareTo(site2.getName());
-            }
-         }
-      });
-      return sites;
-   }
 
    public Iterable<Site> getOnlySites()
    {
