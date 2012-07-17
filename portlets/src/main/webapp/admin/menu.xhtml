@@ -11,8 +11,8 @@
                   <li class="nav-header"><b:icon value="globe"/><span>Sites</span></li>
                   <li class="active">
                      <ul id="sites-list">
-                        <ui:repeat value="#{api.onlySites}" var="site">
-                           <c:set var="siteId" value="#{site.id.asString}"/>
+                        <ui:repeat value="#{api.onlySites}" var="siteVar">
+                           <c:set var="siteId" value="#{siteVar.id.asString}"/>
                            <li id="#{siteId}">
                               <h:outputText value="#{site.label.getValue(true)}"/>
                               <ul>
