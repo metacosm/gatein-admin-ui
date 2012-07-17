@@ -12,9 +12,9 @@
                   <li class="active">
                      <ul id="sites-list">
                         <ui:repeat value="#{api.onlySites}" var="siteVar">
-                           <c:set var="siteId" value="#{siteVar.id.asString}"/>
+                           <c:set var="siteId" value="#{siteVar.id.toBase64String()}"/>
                            <li id="#{siteId}">
-                              <h:outputText value="#{site.label.getValue(true)}"/>
+                              <h:outputText value="#{siteVar.label.getValue(true)}"/>
                               <ul>
                                  <li id="#{siteId}-configuration"><h:commandLink action="#{menu.select(siteId)}"
                                                                                  value="Configuration"/></li>
@@ -31,7 +31,7 @@
                   <li>
                      <ul id="spaces-list">
                         <ui:repeat var="space" value="#{api.onlySpaces}">
-                           <c:set var="spaceId" value="#{space.id.asString}"/>
+                           <c:set var="spaceId" value="#{space.id.toBase64String()}"/>
                            <li id="#{spaceId}">
                               <h:outputText value="#{space.label.getValue(true)}"/>
                               <ul>

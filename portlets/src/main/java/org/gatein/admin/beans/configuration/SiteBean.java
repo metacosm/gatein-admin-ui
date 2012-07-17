@@ -44,7 +44,7 @@ public class SiteBean
    @PostConstruct
    public void init()
    {
-      site = API.getGateIn().getSite(Site.Id.fromString(selectedSiteId));
+      site = API.getGateIn().getSite(Site.Id.fromBase64String(selectedSiteId));
    }
 
    public String getSelectedSiteId()

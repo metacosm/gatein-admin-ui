@@ -43,7 +43,7 @@
       <dependency>
          <groupId>org.gatein.api</groupId>
          <artifactId>gatein-java-api</artifactId>
-         <version>1.0.0-Beta04-SNAPSHOT</version>
+         <version>1.0.0.Beta04-SNAPSHOT</version>
       </dependency>
 
       <dependency>
