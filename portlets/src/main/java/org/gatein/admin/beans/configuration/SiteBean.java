@@ -24,11 +24,14 @@ package org.gatein.admin.beans.configuration;
 
 import org.gatein.admin.API;
 import org.gatein.api.portal.Site;
+import org.gatein.api.security.SecurityRestriction;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import java.util.Collections;
+import java.util.List;
 
 /** @author <a href="mailto:chris.laprun@jboss.com">Chris Laprun</a> */
 @ManagedBean(name = "site")
@@ -47,19 +50,24 @@ public class SiteBean
       site = API.getGateIn().getSite(Site.Id.fromBase64String(selectedSiteId));
    }
 
+   /**
+    * Needed for the managed property.
+    *
+    * @return
+    */
    public String getSelectedSiteId()
    {
       return selectedSiteId;
    }
 
+   /**
+    * Needed for the managed property.
+    *
+    * @return
+    */
    public void setSelectedSiteId(String selectedSiteId)
    {
       this.selectedSiteId = selectedSiteId;
-   }
-
-   public Site getSelectedSite()
-   {
-      return site;
    }
 
    public void setSelectedLocale(String selectedLocale)
@@ -80,5 +88,31 @@ public class SiteBean
    public String getSelectedSkin()
    {
       return selectedSkin;
+   }
+
+   public String getName()
+   {
+      return site.getName();
+   }
+
+   public List<SecurityRestriction.Entry> getAccessPermissions()
+   {
+      final SecurityRestriction securityRestriction;
+      try
+      {
+         securityRestriction = site.getSecurityRestriction(SecurityRestriction.Type.ACCESS);
+      }
+      catch (Exception e)
+      {
+         return Collections.emptyList();
+      }
+      if (securityRestriction != null)
+      {
+         return securityRestriction.getEntries();
+      }
+      else
+      {
+         return Collections.emptyList();
+      }
    }
 }

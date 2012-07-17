@@ -4,203 +4,221 @@
              xmlns:h="http://java.sun.com/jsf/html" xmlns:b="http://richfaces.org/sandbox/bootstrap"
              xmlns:f="http://java.sun.com/jsf/core">
 <ui:define name="content">
-   <div id="container-right" class="span9">
-      <h1><h:outputText value="#{site.selectedSite.name}"/> Site Configuration</h1>
+<div id="container-right" class="span9">
+<h1><h:outputText value="#{site.name}"/> Site Configuration</h1>
 
-      <p class="subtitle">All fields are required</p>
+<p class="subtitle">All fields are required</p>
 
-      <h:form styleClass="form-horizontal">
-         <fieldset>
-            <legend><i class="icon-opened">Collapse / Expand</i>Settings</legend>
-            <div class="control-group">
-               <label class="control-label" for="name">Site Name </label>
+<h:form styleClass="form-horizontal">
+   <fieldset>
+      <legend><i class="icon-opened">Collapse / Expand</i>Settings</legend>
+      <div class="control-group">
+         <label class="control-label" for="name">Site Name</label>
 
-               <div class="controls">
-                  <b:input type="text" styleClass="input-xlarge" id="name" value="#{site.selectedSite.name}"/>
-                  <i class="icon-info-sign icon-gray" rel="tooltip"
-                     title="Displayed in the sidebar">Displayed in the sidebar</i>
-               </div>
-            </div>
-            <!-- End .control-group -->
-            <div class="control-group">
-               <label for="language" class="control-label">Language </label>
-
-               <div class="controls">
-                  <h:selectOneMenu id="language" value="#{site.selectedLocale}">
-                     <f:selectItems value="#{api.supportedLocales}" var="l" itemLabel="#{l.displayLanguage}"
-                                    itemValue="#{l}"/>
-                  </h:selectOneMenu>
-               </div>
-            </div>
-            <!-- End .control-group -->
-            <div class="control-group">
-               <label for="skin" class="control-label">Skin </label>
-
-               <div class="controls">
-                  <h:selectOneMenu id="skin" value="#{site.selectedSkin}">
-                     <f:selectItems value="#{api.availableSkins}" var="s" itemLabel="#{s}" itemValue="#{s}"/>
-                  </h:selectOneMenu>
-               </div>
-            </div>
-            <!-- End .control-group -->
-         </fieldset>
-         <fieldset id="permission-settings">
-            <legend><i class="icon-opened">Collapse / Expand</i>Permission Settings</legend>
-            <div class="control-group" id="access-permission">
-               <label class="control-label">Permission to access </label>
-
-               <div class="controls">
-                  <label class="radio inline" for="public"><input type="radio" value="public" name="access"
-                                                                  id="public"/> Public (everyone can access)</label>
-                  <label class="radio inline" for="private"><input type="radio" value="private" name="access"
-                                                                   id="private"/> Private (restricted access)</label>
-                  <a class="btn btn-small inline hidden-element edit-permission" data-toggle="modal"
-                     href="modal-permission.html">Add Permission</a>
-
-                  <div class="alert hidden-element">
-                     You haven't set permissions yet.
-                  </div>
-                  <!-- End .alert -->
-
-                  <table class="table table-striped hidden-element">
-                     <thead>
-                     <tr>
-                        <th>Group Id</th>
-                        <th>Membership Type</th>
-                        <th class="hidden">Actions</th>
-                     </tr>
-                     </thead>
-                     <tbody>
-                     <tr>
-                        <td>/customers</td>
-                        <td>member</td>
-                        <td class="actions styles-hidden">
-                           <a href="#" rel="tooltip" title="Edit Permission" class="edit-permission"><i
-                              class="icon-pencil">Edit</i></a>
-                           <a href="#" rel="tooltip" title="Delete Permission"><i class="icon-trash">Delete</i></a>
-                        </td>
-                     </tr>
-                     </tbody>
-                  </table>
-               </div>
-            </div>
-            <!-- End .control-group -->
-            <div class="control-group">
-               <label class="control-label">Permission to edit </label>
-
-               <div class="controls">
-                  <a class="btn btn-small edit-permission">Add Permission</a>
-                  <table class="table table-striped">
-                     <thead>
-                     <tr>
-                        <th>Group Id</th>
-                        <th>Membership Type</th>
-                        <th class="hidden">Actions</th>
-                     </tr>
-                     </thead>
-                     <tbody>
-                     <tr>
-                        <td>/customers</td>
-                        <td>member</td>
-                        <td class="actions styles-hidden">
-                           <a href="#" rel="tooltip" title="Edit Permission" class="edit-permission"><i
-                              class="icon-pencil">Edit</i></a>
-                           <a href="#" rel="tooltip" title="Delete Permission"><i class="icon-trash">Delete</i></a>
-                        </td>
-                     </tr>
-                     </tbody>
-                  </table>
-               </div>
-            </div>
-            <!-- End .control-group -->
-         </fieldset>
-         <fieldset>
-            <legend><i class="icon-opened">Collapse / Expand</i>Advanced Properties</legend>
-            <div class="control-group">
-               <label for="session" class="control-label">Session </label>
-
-               <div class="controls">
-                  <select id="session">
-                     <option>Keep it alive on demand</option>
-                     <option>Always keep it alive</option>
-                     <option>Never keep it alive</option>
-                  </select>
-               </div>
-            </div>
-            <!-- End .control-group -->
-            <div class="control-group">
-               <label for="info-bar" class="control-label">Info bar</label>
-
-               <div class="controls">
-                  <label class="checkbox">
-                     <input type="checkbox" value="option1" id="info-bar"/> Show it by default
-                     <i class="icon-info-sign icon-gray" rel="tooltip"
-                        title="No idea about the meaning">No idea about the meaning</i>
-                  </label>
-               </div>
-            </div>
-            <!-- End .control-group -->
-         </fieldset>
-         <div class="form-actions">
-            <button class="btn btn-primary" type="submit">Save changes</button>
-         </div>
-         <!-- End .form-actions -->
-         <div class="alert-container hidden-element">
-            <div class="alert alert-success">
-               <button data-dismiss="alert" class="close">×</button>
-               <strong>Well done!</strong> The changes have been successfully saved.
-            </div>
-            <!-- End .alert -->
-         </div>
-      </h:form>
-
-      <div class="modal hide" id="modal-permission">
-         <div class="modal-header">
-            <a class="close" data-dismiss="modal" href="#">×</a>
-
-            <h3>Select Permission</h3>
-         </div>
-         <div class="modal-body">
-            <div class="permission-group pull-left">
-               <h4>Browse and select a group</h4>
-               <ul class="select enabled">
-                  <li><span>Customers</span></li>
-                  <li>
-                     <i class="icon-closed">Expand/collapse</i><span>Organization</span>
-                     <ul class="second hidden-element">
-                        <li><i class="icon-closed">Expand/collapse</i><span>Communication</span>
-                           <ul class="third hidden-element">
-                              <li><span>Marketing</span></li>
-                              <li><span>Press and Media</span></li>
-                           </ul>
-                        </li>
-                     </ul>
-                  </li>
-                  <li><span>Partners</span></li>
-                  <li><span>Platform</span></li>
-               </ul>
-            </div>
-            <!-- End .permission-group -->
-            <span>then</span>
-
-            <div class="permission-group pull-right">
-               <h4>Select a membership</h4>
-               <ul class="select">
-                  <li><span>Member</span></li>
-                  <li><span>Manager</span></li>
-                  <li><span>Validator</span></li>
-                  <li><span>All</span></li>
-               </ul>
-            </div>
-            <!-- End .permission-group -->
-         </div>
-         <div class="modal-footer">
-            <a href="#" class="btn">Cancel</a>
-            <a href="#" class="btn btn-primary">Select</a>
+         <div class="controls">
+            <b:input type="text" styleClass="input-xlarge" id="name" value="#{site.name}"/>
+            <i class="icon-info-sign icon-gray" rel="tooltip"
+               title="Displayed in the sidebar">Displayed in the sidebar</i>
          </div>
       </div>
-      <!-- end .modal -->
+      <!-- End .control-group -->
+      <div class="control-group">
+         <label for="language" class="control-label">Language</label>
 
+         <div class="controls">
+            <h:selectOneMenu id="language" value="#{site.selectedLocale}">
+               <f:selectItems value="#{api.supportedLocales}" var="l" itemLabel="#{l.displayLanguage}"
+                              itemValue="#{l}"/>
+            </h:selectOneMenu>
+         </div>
+      </div>
+      <!-- End .control-group -->
+      <div class="control-group">
+         <label for="skin" class="control-label">Skin</label>
+
+         <div class="controls">
+            <h:selectOneMenu id="skin" value="#{site.selectedSkin}">
+               <f:selectItems value="#{api.availableSkins}" var="s" itemLabel="#{s}" itemValue="#{s}"/>
+            </h:selectOneMenu>
+         </div>
+      </div>
+      <!-- End .control-group -->
+   </fieldset>
+   <fieldset id="permission-settings">
+      <legend><i class="icon-opened">Collapse / Expand</i>Permission Settings</legend>
+      <div class="control-group" id="access-permission">
+         <label class="control-label">Access permissions</label>
+
+         <h:dataTable value="#{site.accessPermissions}" var="p" styleClass="table table-striped"
+                      rendered="#{!empty site.accessPermissions}">
+            <h:column>
+               <f:facet name="header">Group Id</f:facet>
+               #{p.groupId}
+            </h:column>
+            <h:column>
+               <f:facet name="header">Membership Type</f:facet>
+               #{p.membershipType}
+            </h:column>
+            <h:column>
+               <f:facet name="header">Actions</f:facet>
+               <a href="#" rel="tooltip" title="Edit Permission" class="edit-permission"><b:icon
+                  value="pencil">Edit</b:icon></a>
+               <a href="#" rel="tooltip" title="Delete Permission"><b:icon value="trash">Delete</b:icon></a>
+            </h:column>
+         </h:dataTable>
+
+         <div class="controls">
+            <label class="radio inline" for="public"><input type="radio" value="public" name="access"
+                                                            id="public"/> Public (everyone can access)</label>
+            <label class="radio inline" for="private"><input type="radio" value="private" name="access"
+                                                             id="private"/> Private (restricted access)</label>
+            <a class="btn btn-small inline hidden-element edit-permission" data-toggle="modal"
+               href="modal-permission.html">Add Permission</a>
+
+            <div class="alert hidden-element">
+               You haven't set permissions yet.
+            </div>
+            <!-- End .alert -->
+
+            <table class="table table-striped hidden-element">
+               <thead>
+               <tr>
+                  <th>Group Id</th>
+                  <th>Membership Type</th>
+                  <th class="hidden">Actions</th>
+               </tr>
+               </thead>
+               <tbody>
+               <tr>
+                  <td>/customers</td>
+                  <td>member</td>
+                  <td class="actions styles-hidden">
+                     <a href="#" rel="tooltip" title="Edit Permission" class="edit-permission"><i
+                        class="icon-pencil">Edit</i></a>
+                     <a href="#" rel="tooltip" title="Delete Permission"><i class="icon-trash">Delete</i></a>
+                  </td>
+               </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <!-- End .control-group -->
+      <div class="control-group">
+         <label class="control-label">Permission to edit </label>
+
+         <div class="controls">
+            <a class="btn btn-small edit-permission">Add Permission</a>
+            <table class="table table-striped">
+               <thead>
+               <tr>
+                  <th>Group Id</th>
+                  <th>Membership Type</th>
+                  <th class="hidden">Actions</th>
+               </tr>
+               </thead>
+               <tbody>
+               <tr>
+                  <td>/customers</td>
+                  <td>member</td>
+                  <td class="actions styles-hidden">
+                     <a href="#" rel="tooltip" title="Edit Permission" class="edit-permission"><i
+                        class="icon-pencil">Edit</i></a>
+                     <a href="#" rel="tooltip" title="Delete Permission"><i class="icon-trash">Delete</i></a>
+                  </td>
+               </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <!-- End .control-group -->
+   </fieldset>
+   <fieldset>
+      <legend><i class="icon-opened">Collapse / Expand</i>Advanced Properties</legend>
+      <div class="control-group">
+         <label for="session" class="control-label">Session </label>
+
+         <div class="controls">
+            <select id="session">
+               <option>Keep it alive on demand</option>
+               <option>Always keep it alive</option>
+               <option>Never keep it alive</option>
+            </select>
+         </div>
+      </div>
+      <!-- End .control-group -->
+      <div class="control-group">
+         <label for="info-bar" class="control-label">Info bar</label>
+
+         <div class="controls">
+            <label class="checkbox">
+               <input type="checkbox" value="option1" id="info-bar"/> Show it by default
+               <i class="icon-info-sign icon-gray" rel="tooltip"
+                  title="No idea about the meaning">No idea about the meaning</i>
+            </label>
+         </div>
+      </div>
+      <!-- End .control-group -->
+   </fieldset>
+   <div class="form-actions">
+      <button class="btn btn-primary" type="submit">Save changes</button>
    </div>
+   <!-- End .form-actions -->
+   <div class="alert-container hidden-element">
+      <div class="alert alert-success">
+         <button data-dismiss="alert" class="close">×</button>
+         <strong>Well done!</strong> The changes have been successfully saved.
+      </div>
+      <!-- End .alert -->
+   </div>
+</h:form>
+
+<div class="modal hide" id="modal-permission">
+   <div class="modal-header">
+      <a class="close" data-dismiss="modal" href="#">×</a>
+
+      <h3>Select Permission</h3>
+   </div>
+   <div class="modal-body">
+      <div class="permission-group pull-left">
+         <h4>Browse and select a group</h4>
+         <ul class="select enabled">
+            <li><span>Customers</span></li>
+            <li>
+               <i class="icon-closed">Expand/collapse</i><span>Organization</span>
+               <ul class="second hidden-element">
+                  <li><i class="icon-closed">Expand/collapse</i><span>Communication</span>
+                     <ul class="third hidden-element">
+                        <li><span>Marketing</span></li>
+                        <li><span>Press and Media</span></li>
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+            <li><span>Partners</span></li>
+            <li><span>Platform</span></li>
+         </ul>
+      </div>
+      <!-- End .permission-group -->
+      <span>then</span>
+
+      <div class="permission-group pull-right">
+         <h4>Select a membership</h4>
+         <ul class="select">
+            <li><span>Member</span></li>
+            <li><span>Manager</span></li>
+            <li><span>Validator</span></li>
+            <li><span>All</span></li>
+         </ul>
+      </div>
+      <!-- End .permission-group -->
+   </div>
+   <div class="modal-footer">
+      <a href="#" class="btn">Cancel</a>
+      <a href="#" class="btn btn-primary">Select</a>
+   </div>
+</div>
+<!-- end .modal -->
+
+</div>
 </ui:define>
 </ui:decorate>
