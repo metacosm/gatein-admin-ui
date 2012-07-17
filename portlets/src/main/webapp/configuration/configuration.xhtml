@@ -16,7 +16,7 @@
                <label class="control-label" for="name">Site Name </label>
 
                <div class="controls">
-                  <b:input type="text" styleClass="input-xlarge" id="name" value="#{configuration.selectedSite.name}"/>
+                  <b:input type="text" styleClass="input-xlarge" id="name" value="#{site.selectedSite.name}"/>
                   <i class="icon-info-sign icon-gray" rel="tooltip"
                      title="Displayed in the sidebar">Displayed in the sidebar</i>
                </div>
@@ -26,7 +26,7 @@
                <label for="language" class="control-label">Language </label>
 
                <div class="controls">
-                  <h:selectOneMenu id="language" value="#{configuration.selectedLocale}">
+                  <h:selectOneMenu id="language" value="#{site.selectedLocale}">
                      <f:selectItems value="#{api.supportedLocales}" var="l" itemLabel="#{l.displayLanguage}"
                                     itemValue="#{l}"/>
                   </h:selectOneMenu>
@@ -37,7 +37,7 @@
                <label for="skin" class="control-label">Skin </label>
 
                <div class="controls">
-                  <h:selectOneMenu id="skin" value="#{configuration.selectedSkin}">
+                  <h:selectOneMenu id="skin" value="#{site.selectedSkin}">
                      <f:selectItems value="#{api.availableSkins}" var="s" itemLabel="#{s}" itemValue="#{s}"/>
                   </h:selectOneMenu>
                </div>

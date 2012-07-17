@@ -31,9 +31,9 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 
 /** @author <a href="mailto:chris.laprun@jboss.com">Chris Laprun</a> */
-@ManagedBean(name = "configuration")
+@ManagedBean(name = "site")
 @RequestScoped
-public class ConfigurationController
+public class SiteBean
 {
    @ManagedProperty(value = "#{menu.selectedSite}")
    private String selectedSiteId;
