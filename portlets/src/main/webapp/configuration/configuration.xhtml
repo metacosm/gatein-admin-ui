@@ -47,7 +47,7 @@
    <fieldset id="permission-settings">
       <legend><i class="icon-opened">Collapse / Expand</i>Permission Settings</legend>
       <div class="control-group" id="access-permission">
-         <label class="control-label">Access permissions</label>
+         <label class="control-label">Access Permissions</label>
 
          <h:dataTable value="#{site.accessPermissions}" var="p" styleClass="table table-striped"
                       rendered="#{!empty site.accessPermissions}">
@@ -67,7 +67,8 @@
             </h:column>
          </h:dataTable>
 
-         <div class="controls">
+         <!--<div class="controls">
+
             <label class="radio inline" for="public"><input type="radio" value="public" name="access"
                                                             id="public"/> Public (everyone can access)</label>
             <label class="radio inline" for="private"><input type="radio" value="private" name="access"
@@ -78,7 +79,7 @@
             <div class="alert hidden-element">
                You haven't set permissions yet.
             </div>
-            <!-- End .alert -->
+            &lt;!&ndash; End .alert &ndash;&gt;
 
             <table class="table table-striped hidden-element">
                <thead>
@@ -100,15 +101,33 @@
                </tr>
                </tbody>
             </table>
-         </div>
+         </div>-->
       </div>
       <!-- End .control-group -->
       <div class="control-group">
-         <label class="control-label">Permission to edit </label>
+         <label class="control-label">Edit Permissions</label>
 
          <div class="controls">
-            <a class="btn btn-small edit-permission">Add Permission</a>
-            <table class="table table-striped">
+            <a class="btn btn-small edit-permission">Add Edit Permission</a>
+
+            <h:dataTable value="#{site.editPermissions}" var="p" styleClass="table table-striped"
+                         rendered="#{!empty site.editPermissions}">
+               <h:column>
+                  <f:facet name="header">Group Id</f:facet>
+                  #{p.groupId}
+               </h:column>
+               <h:column>
+                  <f:facet name="header">Membership Type</f:facet>
+                  #{p.membershipType}
+               </h:column>
+               <h:column>
+                  <f:facet name="header">Actions</f:facet>
+                  <a href="#" rel="tooltip" title="Edit Permission" class="edit-permission"><b:icon
+                     value="pencil">Edit</b:icon></a>
+                  <a href="#" rel="tooltip" title="Delete Permission"><b:icon value="trash">Delete</b:icon></a>
+               </h:column>
+            </h:dataTable>
+            <!--<table class="table table-striped">
                <thead>
                <tr>
                   <th>Group Id</th>
@@ -127,7 +146,7 @@
                   </td>
                </tr>
                </tbody>
-            </table>
+            </table>-->
          </div>
       </div>
       <!-- End .control-group -->
