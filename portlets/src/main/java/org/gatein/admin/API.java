@@ -27,11 +27,13 @@ import org.exoplatform.portal.resource.SkinService;
 import org.exoplatform.services.resources.LocaleConfig;
 import org.exoplatform.services.resources.LocaleConfigService;
 import org.gatein.api.GateIn;
+import org.gatein.api.Properties;
 import org.gatein.api.portal.Site;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Locale;
 
 /** @author <a href="mailto:chris.laprun@jboss.com">Chris Laprun</a> */
@@ -112,4 +114,9 @@ public class API
       };
    }
 
+   public List<String> getSupportedSessionStates()
+   {
+      final Properties knownProperties = getGateIn().getKnownProperties();
+      return knownProperties.getSessionBehaviorValues();
+   }
 }
