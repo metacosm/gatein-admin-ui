@@ -47,7 +47,15 @@ public class SiteBean
    @PostConstruct
    public void init()
    {
-      site = API.getGateIn().getSite(Site.Id.fromBase64String(selectedSiteId));
+      if (selectedSiteId == null)
+      {
+         site = API.getGateIn().getDefaultSite();
+      }
+      else
+      {
+         site = API.getGateIn().getSite(Site.Id.fromBase64String(selectedSiteId));
+      }
+
    }
 
    /**
