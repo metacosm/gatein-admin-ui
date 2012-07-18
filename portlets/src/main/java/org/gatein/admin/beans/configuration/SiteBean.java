@@ -30,6 +30,7 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -105,7 +106,7 @@ public class SiteBean
 
    public List<SecurityRestriction.Entry> getAccessPermissions()
    {
-      final SecurityRestriction securityRestriction;
+      /*final SecurityRestriction securityRestriction;
       try
       {
          securityRestriction = site.getSecurityRestriction(SecurityRestriction.Type.ACCESS);
@@ -121,6 +122,31 @@ public class SiteBean
       else
       {
          return Collections.emptyList();
+      }*/
+      final SecurityRestriction.Entry[] members = {SecurityRestriction.Entry.create("member", "/customers")};
+      return Arrays.asList(members);
+   }
+
+   public List<SecurityRestriction.Entry> getEditPermissions()
+   {
+      /*final SecurityRestriction securityRestriction;
+      try
+      {
+         securityRestriction = site.getSecurityRestriction(SecurityRestriction.Type.ACCESS);
       }
+      catch (Exception e)
+      {
+         return Collections.emptyList();
+      }
+      if (securityRestriction != null)
+      {
+         return securityRestriction.getEntries();
+      }
+      else
+      {
+         return Collections.emptyList();
+      }*/
+      final SecurityRestriction.Entry[] members = {SecurityRestriction.Entry.create("member", "/customers")};
+      return Arrays.asList(members);
    }
 }
