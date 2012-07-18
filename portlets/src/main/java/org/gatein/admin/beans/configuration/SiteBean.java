@@ -23,6 +23,7 @@
 package org.gatein.admin.beans.configuration;
 
 import org.gatein.admin.API;
+import org.gatein.api.Properties;
 import org.gatein.api.portal.Site;
 import org.gatein.api.security.SecurityRestriction;
 
@@ -31,8 +32,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 /** @author <a href="mailto:chris.laprun@jboss.com">Chris Laprun</a> */
 @ManagedBean(name = "site")
@@ -81,22 +82,22 @@ public class SiteBean
 
    public void setSelectedLocale(String selectedLocale)
    {
-      this.selectedLocale = selectedLocale;
+      site.setLocale(new Locale(selectedLocale));
    }
 
    public String getSelectedLocale()
    {
-      return selectedLocale;
+      return site.getLocale().toString();
    }
 
    public void setSelectedSkin(String selectedSkin)
    {
-      this.selectedSkin = selectedSkin;
+      site.setSkin(selectedSkin);
    }
 
    public String getSelectedSkin()
    {
-      return selectedSkin;
+      return site.getSkin();
    }
 
    public String getName()
@@ -148,5 +149,25 @@ public class SiteBean
       }*/
       final SecurityRestriction.Entry[] members = {SecurityRestriction.Entry.create("member", "/customers")};
       return Arrays.asList(members);
+   }
+
+   public void setSession(String session)
+   {
+      site.setProperty(Properties.SESSION_BEHAVIOR, session);
+   }
+
+   public String getSession()
+   {
+      return site.getProperty(Properties.SESSION_BEHAVIOR);
+   }
+
+   public void setShowInfoBar(boolean showInfoBar)
+   {
+      site.setProperty(Properties.SHOW_PORTLET_INFO_BAR, showInfoBar);
+   }
+
+   public boolean getShowInfoBar()
+   {
+      return site.getProperty(Properties.SHOW_PORTLET_INFO_BAR);
    }
 }
