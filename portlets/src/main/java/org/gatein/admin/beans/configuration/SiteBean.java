@@ -45,6 +45,9 @@ public class SiteBean
    private Site site;
    private String selectedLocale;
    private String selectedSkin;
+   private String name;
+   private String session;
+   private boolean showInfoBar;
 
    @PostConstruct
    public void init()
@@ -52,12 +55,23 @@ public class SiteBean
       if (selectedSiteId == null)
       {
          site = API.getGateIn().getDefaultSite();
+         selectedSiteId = site.getId().toBase64String();
       }
       else
       {
          site = API.getGateIn().getSite(Site.Id.fromBase64String(selectedSiteId));
       }
 
+      initPropertiesFromStorage();
+   }
+
+   private void initPropertiesFromStorage()
+   {
+      selectedLocale = site.getLocale().toString();
+      selectedSkin = site.getSkin();
+      name = site.getName();
+      session = site.getProperty(Properties.SESSION_BEHAVIOR);
+      showInfoBar = site.getProperty(Properties.SHOW_PORTLET_INFO_BAR);
    }
 
    /**
@@ -82,27 +96,32 @@ public class SiteBean
 
    public void setSelectedLocale(String selectedLocale)
    {
-      site.setLocale(new Locale(selectedLocale));
+      this.selectedLocale = selectedLocale;
    }
 
    public String getSelectedLocale()
    {
-      return site.getLocale().toString();
+      return selectedLocale;
    }
 
    public void setSelectedSkin(String selectedSkin)
    {
-      site.setSkin(selectedSkin);
+      this.selectedSkin = selectedSkin;
    }
 
    public String getSelectedSkin()
    {
-      return site.getSkin();
+      return selectedSkin;
    }
 
    public String getName()
    {
-      return site.getName();
+      return name;
+   }
+
+   public void setName(String name)
+   {
+      this.name = name;
    }
 
    public List<SecurityRestriction.Entry> getAccessPermissions()
@@ -153,21 +172,40 @@ public class SiteBean
 
    public void setSession(String session)
    {
-      site.setProperty(Properties.SESSION_BEHAVIOR, session);
+      this.session = session;
    }
 
    public String getSession()
    {
-      return site.getProperty(Properties.SESSION_BEHAVIOR);
+      return session;
    }
 
    public void setShowInfoBar(boolean showInfoBar)
    {
-      site.setProperty(Properties.SHOW_PORTLET_INFO_BAR, showInfoBar);
+      this.showInfoBar = showInfoBar;
    }
 
    public boolean getShowInfoBar()
    {
-      return site.getProperty(Properties.SHOW_PORTLET_INFO_BAR);
+      return showInfoBar;
+   }
+
+   public String save()
+   {
+      site.setLocale(new Locale(selectedLocale));
+      site.setSkin(selectedSkin);
+      site.setProperty(Properties.SESSION_BEHAVIOR, session);
+      site.setProperty(Properties.SHOW_PORTLET_INFO_BAR, showInfoBar);
+
+      return null;
+   }
+
+   public String cancel()
+   {
+      // reset properties to their initial state
+      initPropertiesFromStorage();
+
+      // re-display page
+      return null;
    }
 }
