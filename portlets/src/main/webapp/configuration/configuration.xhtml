@@ -135,14 +135,12 @@
    <fieldset>
       <legend><i class="icon-opened">Collapse / Expand</i>Advanced Properties</legend>
       <div class="control-group">
-         <label for="session" class="control-label">Session </label>
+         <label for="session" class="control-label">Session</label>
 
          <div class="controls">
-            <select id="session">
-               <option>Keep it alive on demand</option>
-               <option>Always keep it alive</option>
-               <option>Never keep it alive</option>
-            </select>
+            <h:selectOneMenu id="session" value="#{site.session}">
+               <f:selectItems value="#{api.supportedSessionStates}" var="sessionState" itemValue="#{sessionState}"/>
+            </h:selectOneMenu>
          </div>
       </div>
       <!-- End .control-group -->
@@ -151,9 +149,7 @@
 
          <div class="controls">
             <label class="checkbox">
-               <input type="checkbox" value="option1" id="info-bar"/> Show it by default
-               <i class="icon-info-sign icon-gray" rel="tooltip"
-                  title="No idea about the meaning">No idea about the meaning</i>
+               <h:selectBooleanCheckbox value="#{site.showInfoBar}" id="info-bar"/> Show portlet info bar by default
             </label>
          </div>
       </div>
