@@ -46,7 +46,6 @@ public class SiteBean
    private Site site;
    private String selectedLocale;
    private String selectedSkin;
-   private String name;
    private String session;
    private boolean showInfoBar;
    private boolean isDirty;
@@ -71,7 +70,6 @@ public class SiteBean
    {
       selectedLocale = site.getLocale().toString();
       selectedSkin = site.getSkin();
-      name = site.getName();
       session = site.getProperty(Properties.SESSION_BEHAVIOR);
       showInfoBar = site.getProperty(Properties.SHOW_PORTLET_INFO_BAR);
 
@@ -122,13 +120,7 @@ public class SiteBean
 
    public String getName()
    {
-      return name;
-   }
-
-   public void setName(String name)
-   {
-      markAsDirtyIfNeeded(this.name, name);
-      this.name = name;
+      return site.getName();
    }
 
    public List<SecurityRestriction.Entry> getAccessPermissions()

@@ -16,7 +16,7 @@
          <label class="control-label" for="name">Site Name</label>
 
          <div class="controls">
-            <b:input type="text" styleClass="input-xlarge" id="name" value="#{site.name}"/>
+            <h:outputText styleClass="input-xlarge" id="name" value="#{site.name}"/>
             <i class="icon-info-sign icon-gray" rel="tooltip"
                title="Displayed in the sidebar">Displayed in the sidebar</i>
          </div>
@@ -175,7 +175,7 @@
       <!-- End .control-group -->
    </fieldset>
    <div class="form-actions">
-      <h:commandButton styleClass="btn btn-primary" value="Save changes" action="#{site.save}"/>
+      <h:commandButton styleClass="btn btn-primary" type="submit" value="Save changes" action="#{site.save}"/>
    </div>
    <!-- End .form-actions -->
    <div class="alert-container hidden-element">
