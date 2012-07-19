@@ -30,14 +30,14 @@ import org.gatein.api.security.SecurityRestriction;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.ViewScoped;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
 /** @author <a href="mailto:chris.laprun@jboss.com">Chris Laprun</a> */
 @ManagedBean(name = "site")
-@RequestScoped
+@ViewScoped
 public class SiteBean
 {
    @ManagedProperty(value = "#{menu.selectedSite}")
