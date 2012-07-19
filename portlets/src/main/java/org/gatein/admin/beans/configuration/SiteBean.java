@@ -26,6 +26,7 @@ import org.gatein.admin.API;
 import org.gatein.api.Properties;
 import org.gatein.api.portal.Site;
 import org.gatein.api.security.SecurityRestriction;
+import org.gatein.common.util.ParameterValidation;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -48,6 +49,7 @@ public class SiteBean
    private String name;
    private String session;
    private boolean showInfoBar;
+   private boolean isDirty;
 
    @PostConstruct
    public void init()
@@ -72,6 +74,8 @@ public class SiteBean
       name = site.getName();
       session = site.getProperty(Properties.SESSION_BEHAVIOR);
       showInfoBar = site.getProperty(Properties.SHOW_PORTLET_INFO_BAR);
+
+      isDirty = false;
    }
 
    /**
@@ -96,6 +100,7 @@ public class SiteBean
 
    public void setSelectedLocale(String selectedLocale)
    {
+      markAsDirtyIfNeeded(this.selectedLocale, selectedLocale);
       this.selectedLocale = selectedLocale;
    }
 
@@ -106,6 +111,7 @@ public class SiteBean
 
    public void setSelectedSkin(String selectedSkin)
    {
+      markAsDirtyIfNeeded(this.selectedSkin, selectedSkin);
       this.selectedSkin = selectedSkin;
    }
 
@@ -121,6 +127,7 @@ public class SiteBean
 
    public void setName(String name)
    {
+      markAsDirtyIfNeeded(this.name, name);
       this.name = name;
    }
 
@@ -172,6 +179,7 @@ public class SiteBean
 
    public void setSession(String session)
    {
+      markAsDirtyIfNeeded(this.session, session);
       this.session = session;
    }
 
@@ -182,6 +190,7 @@ public class SiteBean
 
    public void setShowInfoBar(boolean showInfoBar)
    {
+      markAsDirtyIfNeeded(this.showInfoBar, showInfoBar);
       this.showInfoBar = showInfoBar;
    }
 
@@ -192,10 +201,16 @@ public class SiteBean
 
    public String save()
    {
-      site.setLocale(new Locale(selectedLocale));
-      site.setSkin(selectedSkin);
-      site.setProperty(Properties.SESSION_BEHAVIOR, session);
-      site.setProperty(Properties.SHOW_PORTLET_INFO_BAR, showInfoBar);
+      // only save if needed
+      if (isDirty)
+      {
+         site.setLocale(new Locale(selectedLocale));
+         site.setSkin(selectedSkin);
+         site.setProperty(Properties.SESSION_BEHAVIOR, session);
+         site.setProperty(Properties.SHOW_PORTLET_INFO_BAR, showInfoBar);
+
+         isDirty = false;
+      }
 
       return null;
    }
@@ -207,5 +222,13 @@ public class SiteBean
 
       // re-display page
       return null;
+   }
+
+   private void markAsDirtyIfNeeded(Object oldValue, Object newValue)
+   {
+      if (ParameterValidation.isOldAndNewDifferent(oldValue, newValue))
+      {
+         isDirty = true;
+      }
    }
 }
