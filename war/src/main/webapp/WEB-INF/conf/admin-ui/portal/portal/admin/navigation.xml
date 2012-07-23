@@ -6,22 +6,28 @@
 
    <page-nodes>
       <node>
-         <uri>homepage</uri>
-         <name>homepage</name>
-         <label>#{portal.admin.homepage}</label>
-         <page-reference>portal::admin::homepage</page-reference>
+         <uri>configuration</uri>
+         <name>configuration</name>
+         <label>#{portal.admin.configuration}</label>
+         <page-reference>portal::admin::configuration</page-reference>
       </node>
       <node>
-         <uri>option1</uri>
-         <name>option1</name>
-         <label>#{portal.admin.option1}</label>
-         <page-reference>portal::admin::option1</page-reference>
+         <uri>redirects</uri>
+         <name>redirects</name>
+         <label>#{portal.admin.redirects}</label>
+         <page-reference>portal::admin::redirects</page-reference>
       </node>
       <node>
-         <uri>option2</uri>
-         <name>option2</name>
-         <label>#{portal.admin.option2}</label>
-         <page-reference>portal::admin::option2</page-reference>
+         <uri>layout</uri>
+         <name>layout</name>
+         <label>#{portal.admin.layout}</label>
+         <page-reference>portal::admin::layout</page-reference>
+      </node>
+      <node>
+         <uri>navigation</uri>
+         <name>navigation</name>
+         <label>#{portal.admin.navigation}</label>
+         <page-reference>portal::admin::navigation</page-reference>
       </node>
 
       <!-- NOT FOUND node -->
