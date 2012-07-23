@@ -17,7 +17,7 @@
    <version>1.0.0-SNAPSHOT</version>
 
    <properties>
-      <version.portlet_bridge>3.0.0.Beta4</version.portlet_bridge>
+      <version.portlet_bridge>3.0.0.CR1</version.portlet_bridge>
    </properties>
 
    <modules>
