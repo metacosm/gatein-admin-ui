@@ -14,14 +14,14 @@
    </properties>
 
    <portal-layout>
-      <portlet-application>
+      <!--<portlet-application>
          <portlet>
             <application-ref>gatein-admin-ui</application-ref>
             <portlet-ref>AdminBannerPortlet</portlet-ref>
          </portlet>
          <access-permissions>Everyone</access-permissions>
          <show-info-bar>false</show-info-bar>
-      </portlet-application>
+      </portlet-application>-->
 
       <container template="system:/groovy/portal/webui/container/UITableColumnContainer.gtmpl">
          <access-permissions>Everyone</access-permissions>
@@ -41,9 +41,9 @@
             <portlet-application>
                <portlet>
                   <application-ref>gatein-admin-ui</application-ref>
-                  <portlet-ref>AdminMenuPortlet</portlet-ref>
+                  <portlet-ref>AdminDynamicMenuPortlet</portlet-ref>
                </portlet>
-               <title>Admin Menu portlet</title>
+               <title>Admin Dynamic Menu portlet</title>
                <access-permissions>Everyone</access-permissions>
                <show-info-bar>false</show-info-bar>
                <show-application-state>false</show-application-state>

@@ -21,11 +21,11 @@
       <portlet-info>
          <title>Admin Footer Portlet</title>
          <short-title>Admin Footer Portlet</short-title>
-         <keywords>system</keywords>
+         <keywords>admin</keywords>
       </portlet-info>
    </portlet>
 
-   <portlet>
+   <!--<portlet>
       <portlet-name>AdminBannerPortlet</portlet-name>
 
       <portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
@@ -42,9 +42,9 @@
       <portlet-info>
          <title>Admin Banner Portlet</title>
          <short-title>Admin Banner Portlet</short-title>
-         <keywords>system</keywords>
+         <keywords>admin</keywords>
       </portlet-info>
-   </portlet>
+   </portlet>-->
 
    <portlet>
       <portlet-name>AdminMenuPortlet</portlet-name>
@@ -63,17 +63,17 @@
       <portlet-info>
          <title>Admin Menu Portlet</title>
          <short-title>Admin Menu Portlet</short-title>
-         <keywords>system</keywords>
+         <keywords>admin</keywords>
       </portlet-info>
    </portlet>
 
    <portlet>
-      <portlet-name>AdminWelcomePortlet</portlet-name>
+      <portlet-name>AdminDynamicMenuPortlet</portlet-name>
 
       <portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
       <init-param>
          <name>javax.portlet.faces.defaultViewId.view</name>
-         <value>/admin/welcome.xhtml</value>
+         <value>/admin/dynamic-menu.xhtml</value>
       </init-param>
 
       <expiration-cache>0</expiration-cache>
@@ -82,19 +82,19 @@
          <portlet-mode>VIEW</portlet-mode>
       </supports>
       <portlet-info>
-         <title>Admin Welcome Portlet</title>
-         <short-title>Admin Welcome Portlet</short-title>
-         <keywords>system</keywords>
+         <title>Admin Dynamic Menu Portlet</title>
+         <short-title>Admin Dynamic Menu Portlet</short-title>
+         <keywords>admin</keywords>
       </portlet-info>
    </portlet>
 
    <portlet>
-      <portlet-name>AdminOption1Portlet</portlet-name>
+      <portlet-name>AdminConfigurationPortlet</portlet-name>
 
       <portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
       <init-param>
          <name>javax.portlet.faces.defaultViewId.view</name>
-         <value>/admin/option1.xhtml</value>
+         <value>/configuration/configuration.xhtml</value>
       </init-param>
 
       <expiration-cache>0</expiration-cache>
@@ -103,19 +103,19 @@
          <portlet-mode>VIEW</portlet-mode>
       </supports>
       <portlet-info>
-         <title>Admin Option1 Portlet</title>
-         <short-title>Admin Option1 Portlet</short-title>
-         <keywords>system</keywords>
+         <title>Site Configuration Portlet</title>
+         <short-title>Configuration Portlet</short-title>
+         <keywords>admin</keywords>
       </portlet-info>
    </portlet>
 
    <portlet>
-      <portlet-name>AdminOption2Portlet</portlet-name>
+      <portlet-name>AdminRedirectsPortlet</portlet-name>
 
       <portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
       <init-param>
          <name>javax.portlet.faces.defaultViewId.view</name>
-         <value>/admin/option2.xhtml</value>
+         <value>/admin/redirects.xhtml</value>
       </init-param>
 
       <expiration-cache>0</expiration-cache>
@@ -124,9 +124,51 @@
          <portlet-mode>VIEW</portlet-mode>
       </supports>
       <portlet-info>
-         <title>Admin Option2 Portlet</title>
-         <short-title>Admin Option2 Portlet</short-title>
-         <keywords>system</keywords>
+         <title>Site Redirects Portlet</title>
+         <short-title>Redirects Portlet</short-title>
+         <keywords>admin</keywords>
+      </portlet-info>
+   </portlet>
+
+   <portlet>
+      <portlet-name>AdminLayoutPortlet</portlet-name>
+
+      <portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
+      <init-param>
+         <name>javax.portlet.faces.defaultViewId.view</name>
+         <value>/admin/layout.xhtml</value>
+      </init-param>
+
+      <expiration-cache>0</expiration-cache>
+      <supports>
+         <mime-type>text/html</mime-type>
+         <portlet-mode>VIEW</portlet-mode>
+      </supports>
+      <portlet-info>
+         <title>Site Layout Portlet</title>
+         <short-title>Layout Portlet</short-title>
+         <keywords>admin</keywords>
+      </portlet-info>
+   </portlet>
+
+   <portlet>
+      <portlet-name>AdminNavigationPortlet</portlet-name>
+
+      <portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
+      <init-param>
+         <name>javax.portlet.faces.defaultViewId.view</name>
+         <value>/admin/navigation.xhtml</value>
+      </init-param>
+
+      <expiration-cache>0</expiration-cache>
+      <supports>
+         <mime-type>text/html</mime-type>
+         <portlet-mode>VIEW</portlet-mode>
+      </supports>
+      <portlet-info>
+         <title>Site Navigation and Pages Portlet</title>
+         <short-title>Navigation and Pages Portlet</short-title>
+         <keywords>admin</keywords>
       </portlet-info>
    </portlet>
 </portlet-app>

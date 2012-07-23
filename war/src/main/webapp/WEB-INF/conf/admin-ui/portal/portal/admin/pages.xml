@@ -4,34 +4,16 @@
           xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_2">
 
    <page>
-      <name>homepage</name>
-      <title>Home Page</title>
+      <name>configuration</name>
+      <title>Site Configuration</title>
       <access-permissions>Everyone</access-permissions>
       <edit-permission>*:/platform/administrators</edit-permission>
       <portlet-application>
          <portlet>
             <application-ref>gatein-admin-ui</application-ref>
-            <portlet-ref>AdminWelcomePortlet</portlet-ref>
+            <portlet-ref>AdminConfigurationPortlet</portlet-ref>
          </portlet>
-         <title>Admin Welcome portlet</title>
-         <access-permissions>Everyone</access-permissions>
-         <show-info-bar>false</show-info-bar>
-         <show-application-state>false</show-application-state>
-         <show-application-mode>false</show-application-mode>
-      </portlet-application>
-   </page>
-
-   <page>
-      <name>option1</name>
-      <title>Admin Option 1</title>
-      <access-permissions>Everyone</access-permissions>
-      <edit-permission>*:/platform/administrators</edit-permission>
-      <portlet-application>
-         <portlet>
-            <application-ref>gatein-admin-ui</application-ref>
-            <portlet-ref>AdminOption1Portlet</portlet-ref>
-         </portlet>
-         <title>Admin Option1 portlet</title>
+         <title>Site Configuration</title>
          <access-permissions>Everyone</access-permissions>
          <show-info-bar>false</show-info-bar>
          <show-application-state>false</show-application-state>
@@ -39,16 +21,50 @@
       </portlet-application>
    </page>
    <page>
-      <name>option2</name>
-      <title>Admin Option 2</title>
+      <name>redirects</name>
+      <title>Site Redirects Configuration</title>
       <access-permissions>Everyone</access-permissions>
       <edit-permission>*:/platform/administrators</edit-permission>
       <portlet-application>
          <portlet>
             <application-ref>gatein-admin-ui</application-ref>
-            <portlet-ref>AdminOption2Portlet</portlet-ref>
+            <portlet-ref>AdminRedirectsPortlet</portlet-ref>
          </portlet>
-         <title>Admin Option2 portlet</title>
+         <title>Site Redirects</title>
+         <access-permissions>Everyone</access-permissions>
+         <show-info-bar>false</show-info-bar>
+         <show-application-state>false</show-application-state>
+         <show-application-mode>false</show-application-mode>
+      </portlet-application>
+   </page>
+   <page>
+      <name>layout</name>
+      <title>Site Layout</title>
+      <access-permissions>Everyone</access-permissions>
+      <edit-permission>*:/platform/administrators</edit-permission>
+      <portlet-application>
+         <portlet>
+            <application-ref>gatein-admin-ui</application-ref>
+            <portlet-ref>AdminLayoutPortlet</portlet-ref>
+         </portlet>
+         <title>Site Layout</title>
+         <access-permissions>Everyone</access-permissions>
+         <show-info-bar>false</show-info-bar>
+         <show-application-state>false</show-application-state>
+         <show-application-mode>false</show-application-mode>
+      </portlet-application>
+   </page>
+   <page>
+      <name>navigation</name>
+      <title>Site Navigation and Pages</title>
+      <access-permissions>Everyone</access-permissions>
+      <edit-permission>*:/platform/administrators</edit-permission>
+      <portlet-application>
+         <portlet>
+            <application-ref>gatein-admin-ui</application-ref>
+            <portlet-ref>AdminNavigationPortlet</portlet-ref>
+         </portlet>
+         <title>Site Navigation and Pages</title>
          <access-permissions>Everyone</access-permissions>
          <show-info-bar>false</show-info-bar>
          <show-application-state>false</show-application-state>
